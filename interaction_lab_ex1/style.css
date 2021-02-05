@@ -1,0 +1,16 @@
+html {
+  background-color: black;
+  text-align: center;
+}
+
+p {
+  color: white;
+}
+
+#bg {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border: 1px solid white;
+  padding: 10px;
+}
