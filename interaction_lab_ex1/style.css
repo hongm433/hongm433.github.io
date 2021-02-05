@@ -4,13 +4,17 @@ html {
 }
 
 p {
-  color: white;
+  padding-top: 5px;
+  margin-bottom: 0;
+  color: rgb(221, 128, 162, 0.8);
 }
 
 #bg {
   position: fixed;
   top: 10px;
   left: 10px;
-  border: 1px solid white;
+  border: 3px solid rgb(221, 128, 162, 0.5);
   padding: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
