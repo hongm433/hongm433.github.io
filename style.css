@@ -1,7 +1,49 @@
 html {
-  background: pink;
+  background: #79A86F;
+  color: white;
+  text-align: center;
 }
 
 h1 {
-  color: blue;
+  font-size: 60px;
+  font-family: obvia, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  margin: 80px 0 80px 0;
+}
+
+p, a {
+  font-family: futura;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #BBF5BA;
+  margin-bottom: 10px;
+}
+
+.div {
+  padding: 0 30px 30px 30px;
+}
+
+a:hover {
+  color: white;
+  background-color: rgb(187, 245, 186, 0.3);
+  padding: 5px 10px;
 }
