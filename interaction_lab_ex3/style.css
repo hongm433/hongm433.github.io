@@ -1,0 +1,18 @@
+html {
+  font-family: "Primetime";
+  text-align: center;
+  background-color: #F4B0C3;
+  line-height: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 100px;
+  vertical-align: middle;
+}
+
+a:hover {
+  color: #F4B0C3;
+  -webkit-text-stroke: 4px black;
+}

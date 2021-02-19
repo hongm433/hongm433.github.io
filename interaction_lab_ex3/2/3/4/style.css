@@ -1,0 +1,55 @@
+html {
+  background-color: black;
+  text-align: center;
+  font-family: "Primetime";
+}
+
+a {
+  display: block;
+  font-size: 50px;
+  text-decoration: none;
+  color: #F4B0C3;
+  margin: 70px 0 10px 0;
+}
+
+.date {
+  font-family: helvetica;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+a:hover {
+  color: black;
+  -webkit-text-stroke: 2px #F4B0C3;
+}
+
+.song {
+  margin-top: 30px;
+  color: white;
+  font-family: helvetica;
+  font-size: 15px;
+}
+
+.video {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.debutstage {
+  font-family: helvetica;
+  color: #F4B0C3;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 70px 0 20px 0;
+}
+
+.debut {
+  font-family: helvetica;
+  color: #F4B0C3;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 15px 0 5px 0;
+}
