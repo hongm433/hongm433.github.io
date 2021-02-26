@@ -1,0 +1,156 @@
+/*phone*/
+
+@media only screen and (max-width: 767px) {
+  html {
+    background-color: #FFA491;
+  }
+  
+  #trianglevisible {
+    display: none;
+  }
+  
+  #squarevisible {
+    display: none;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+     position: relative;
+     background-color: #C4D6FF;
+     top: 20px;
+     left: 20px;
+      /*animation*/
+      animation-name: circlerolling;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+      animation-timing-function: ease-in;
+
+  }
+  .circleword {
+    display: inline;
+    font-size: 30px;
+    font-family: futura;
+    font-weight: 300;
+    text-align: center;
+    color: #E0FFAB;
+    margin: 0;
+  }
+
+  @keyframes circlerolling {
+    0% {background-color: #C4D6FF; top: 10px; opacity: 1;}
+    25% {background-color: #E0FFAB; top: 300px; opacity: 0.5;}
+    50% {background-color: #C4D6FF; top: 600px; opacity: 0;}
+    75% {background-color: #E0FFAB; top: 300px; opacity: 0.5;}
+    100% {background-color: #C4D6FF; top: 10px; opacity: 1;}
+  }
+}
+
+/*tablet to laptop*/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  html {
+    background-color: #C4D6FF;
+  }
+
+  #circlevisible {
+    display: none;
+  }
+
+  #squarevisible {
+    display: none;
+  }
+  #trianglevisible {
+    display: block;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #E0FFAB;
+    top: 20px;
+    left: 20px;
+      /*animation*/
+    animation-name: trianglerolling;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+     animation-timing-function: ease-in;
+    }
+  
+    @keyframes trianglerolling {
+      0% {border-bottom-color: #E0FFAB; left: 30px}
+      25% {border-bottom-color: #FFA491; left: 300px;}
+      50% {border-bottom-color: #E0FFAB; left: 760px;}
+      75% {border-bottom-color: #FFA491; left: 300;}
+      100% {border-bottom-color: #E0FFAB; left: 30px;}
+    }
+  .triangleword {
+    display: inline;
+    font-size: 60px;
+    font-family: futura;
+    font-weight: 500;
+    text-align: center;
+    color: #E0FFAB;
+    position: relative;
+    top: 100px;
+    margin: 0;
+  }
+}
+
+/*large desktop*/
+@media only screen and (min-width: 1200px) {
+  div {
+    display: none;
+  }
+  html {
+    background-color: #E0FFAB;
+  }
+  #squarevisible {
+    display: block;
+  }
+  #circlevisible, #trianglevisible {
+    display: none;
+  }
+
+  .squareword {
+    display: block;
+    font-size: 100px;
+    font-family: futura;
+    font-weight: bold;
+    text-align: center;
+    color: #FFA491;
+    position: relative;
+    top: -10px;
+    margin: 0;
+  }
+  .square {
+    display: block;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: #FFA491;
+    /*animation*/
+    animation-name: squarerolling;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+  }
+
+  @keyframes squarerolling {
+    0% {background-color: #FFA491; top: 50px; left: 50px}
+    25% {background-color: #C4D6FF; top: 50px; left: 1200px;}
+    50% {background-color: #FFA491; top: 500px; left: 1200px;}
+    75% {background-color:#C4D6FF; top: 500px; left: 50px;}
+    100% {background-color: #FFA491; top: 50px; left: 50px;}
+  }
+}

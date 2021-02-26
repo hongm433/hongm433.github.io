@@ -1,0 +1,52 @@
+html {
+  font-family: "poppins";
+  text-align: center;
+  background: linear-gradient(167.08deg, #5782C2 0%, rgba(174, 70, 255, 0.72) 100%), #5782C2;
+  background-size: 1440px 1024px;
+}
+
+h1 {
+  position: absolute;
+  width: 1123px;
+  height: 210px;
+  left: 159px;
+  top: 140px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 140px;
+  line-height: 210px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+p {
+  position: absolute;
+  width: 518px;
+  height: 80px;
+  left: 764px;
+  top: 320px;
+
+  font-family: "Notera Personal Use Only";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 80px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
