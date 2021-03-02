@@ -87,4 +87,7 @@ a:hover {
     display: block;
     margin-top: 10px;
   }
+  .hidden {
+  width: 30px;
+  height: 20px;
   }
