@@ -1,0 +1,2 @@
+alert("Exclamation marks have the same difficulty and also quotation marks, they are unnecessary, they are ugly, they spoil the line of the writing or the printing");
+alert("and anyway what is the use, if you do not know that a question is a question what is the use of its being a question.")

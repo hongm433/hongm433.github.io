@@ -1,0 +1,1 @@
+alert("Think about anything you really like to do\nand you will see what I mean.");

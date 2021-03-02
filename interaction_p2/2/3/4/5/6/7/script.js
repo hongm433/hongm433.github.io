@@ -1,0 +1,3 @@
+alert("Periods have a life of their own a necessity of their own a feeling of their own a time of their own.");
+alert("And that feeling that life that necessity that time can express itself in an infinite variety that is the reason that I have always remained true to periods so much so that as I say recently I have felt that one could need them more than one had ever needed them.");
+alert("You can see what an entirely different thing a period is from a comma, a colon or a semi-colon.")

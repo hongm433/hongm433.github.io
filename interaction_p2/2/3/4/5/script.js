@@ -1,0 +1,2 @@
+alert("So now to come to the real question of punctuation, periods, commas, colons, semi-colons and capitals and small letters. I have had a long and complicated life with all these.");
+alert("Let us begin with these I use the least first and these are colons and semi-colons, one might add to these commas.");

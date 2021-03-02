@@ -1,0 +1,2 @@
+alert("So there are the uninteresting things in punctuation uninteresting in a way that is perfectly obvious, and so we do not have to go any farther into that.");
+alert("There are besides dashes and dots, and these might be interesting spaces might be interesting. They might if one felt that way about them.");
