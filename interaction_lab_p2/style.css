@@ -109,10 +109,20 @@ a {
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
+    margin-bottom: 20px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .body {
+    display: block;
+    margin-left: 45%;
+  }
   h1 {
     font-size: 70px;
     margin-top: 250px;
@@ -125,13 +135,13 @@ a {
     font-weight: bold;
     margin-top: 40px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: right;
   }
   
   p {
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: right;
   }
   
   img {
@@ -139,24 +149,35 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 30px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: right;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .body {
+    display: block;
+    margin-left: 10%;
+  }
+
   h1 {
     font-size: 100px;
     margin-top: 250px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
   }
   
   h2 {
     font-size: 40px;
     font-weight: bold;
     margin-top: 40px;
+    margin-bottom: 100px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
   }
@@ -164,16 +185,14 @@ a {
   p {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
+    margin-left: 30px;
   }
   
   img {
-    width: 700px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
+    width: 500px;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 30px;
   }
 }
