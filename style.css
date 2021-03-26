@@ -4,6 +4,7 @@ html {
   text-align: center;
 }
 
+/* body */ 
 h1 {
   font-size: 60px;
   font-family: obvia, sans-serif;
@@ -46,4 +47,20 @@ a:hover {
   color: white;
   background-color: rgb(187, 245, 186, 0.3);
   padding: 5px 10px;
+}
+
+/* dark mode */
+.darkmode {
+  background: #49703F;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+/* button */
+#button {
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
