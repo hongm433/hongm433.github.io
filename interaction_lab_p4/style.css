@@ -1,0 +1,15 @@
+html {
+  text-align: center;
+  font-family: "futura";
+}
+
+.title {
+  margin-top: 50px;
+  color: hotpink;
+  font-size: 50px;
+}
+
+img {
+  width: 300px;
+  margin-top: 30px;
+}
