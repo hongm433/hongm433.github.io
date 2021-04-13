@@ -1,0 +1,14 @@
+A=new Array();
+A[0]="Something will happen soon. Keep up the good work."
+A[1]="You should experience new things. Challenge yourself!"
+A[2]="If you do not try anything, there is no change."
+A[3]="You will get a new opportunity soon! Prepare and get it."
+A[4]="All fortunes are yours. May the grace of God be with you."
+A[5]="Look around your surroundings, your star is rising."
+A[6]="Broaden your perspective, you missed something important."
+A[7]="Love yourself and be yourself. Show yourself to the world."
+A[8]="Wait a little bit, someone will come to you."
+A[9]="Do not overlook anything. It can be your key."
+rand = Math.floor(A.length * Math.random());
+randText = A[rand];
+search.sc.value = randText;
