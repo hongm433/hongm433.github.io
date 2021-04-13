@@ -1,0 +1,103 @@
+html {
+  background-color: #121212;
+}
+
+/* title */
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  font-family: "adobe-garamond-pro", serif;
+  font-weight: 500;
+  margin: 60px 0 10px 0;
+  color: #E1CD76;
+}
+
+.question {
+  position: absolute;
+  top: 70px;
+  right: 20%;
+}
+
+/* help */
+.help {
+  font-family: Helvetica, sans-serif;
+  color: rgb(255, 255, 255, 0.3);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* direction */
+.direction {
+  font-family: Helvetica, sans-serif;
+  margin-top: 0;
+  margin-bottom: 100px;
+  color: rgb(255, 255, 255, 0.3);
+  font-size: 16px;
+  text-align: center;
+}
+
+/* filter */
+.filter {
+  margin-left: 50px;
+  float: left;
+  width: 30%;
+}
+
+.filter-title {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+  font-weight: 100;
+  color: rgb(255, 255, 255, 0.3);
+  font-family: Helvetica, sans-serif;
+}
+
+.ind {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 1.3rem;
+  color: rgb(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-family: "adobe-garamond-pro", serif;
+  font-weight: 400;
+}
+
+/* card */
+.container {
+  /* margin-left: 30%; */
+  width: 65%;
+  float: right;
+  margin-bottom: 50px;
+}
+
+.card-container {
+  padding: 1.2rem;
+  width: 130px;
+  height: 230px;
+  display: inline-flex;
+  flex: left;
+  position: relative;
+  /* display: grid; */
+  /* grid-gap: 2rem; */
+  /* 50 50 */
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+/* 
+.card-image.active {
+  display: block;
+} */
+
+
+/* click */
+.clicked {
+  color: white;
+}
