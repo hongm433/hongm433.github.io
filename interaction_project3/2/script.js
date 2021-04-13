@@ -59,18 +59,6 @@ function showCards() {
     cardContainer.classList.add("card-container");
     document.querySelector(".container").append(cardContainer);
   
-    // ** add card titles to our container
-    // var cardTitle = document.createElement("h1");
-    // cardTitle.classList.add("card-title");
-    // cardTitle.innerText = card.fields.name;
-    // cardContainer.append(cardTitle);
-
-    // ** add card deck to our card Container
-    // var cardDeck = document.createElement("h1");
-    // cardDeck.classList.add("year");
-    // cardDeck.innerText = card.fields.name_of_deck;
-    // cardContainer.append(cardDeck);
-
     // ** add image to our Container
     var cardImage = document.createElement("img");
     cardImage.classList.add("card-image");
@@ -195,6 +183,26 @@ function showCards() {
     inIt();
 
 
+    /* add */
+    var removeCartItemButtons = document.getElementsByClassName('button1');
+    console.log(removeCartItemButtons);
+
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+      var button = removeCartItemButtons[i]
+      button.addEventListener('click', function(event) {
+        var buttonClicked = event.target
+        buttonClicked.parentElement.remove()
+      })
+    }
+
+    // var cardAdd = document.createElement("img");
+    // cardAdd.classList.add("card-add");
+    // cardAdd.src = "images/add.png"
+    // cardContainer.append(cardAdd);
+
+
+    // cardContainer.addEventListener('mouseenter', ()=> cardContainer.img = cardAdd);
+    // cardContainer.addEventListener('mouseleave', ()=> cardContainer.img = cardAdd);
 
     
   });
