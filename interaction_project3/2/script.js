@@ -41,7 +41,7 @@ function gotAllCards(err) {
 // just loop through the books and console.log them
 function consoleLogCards() {
   console.log("consoleLogCards()");
-  sortedCards.forEach((card) => {
+  cards.forEach((card) => {
     console.log("Card:", card);
   });
 }
