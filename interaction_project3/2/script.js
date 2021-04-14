@@ -37,16 +37,6 @@ function gotAllCards(err) {
   showCards();
 }
 
-//sort the cards
-const sortedCards = cards.sort((a, b) => {
-  if (a.fields.number < b.fields.number) {
-      return -1;
-  } else if (a.fields.number > b.fields.number) {
-      return 1;
-  } else {
-  return 0;
-};
-});
 
 // just loop through the books and console.log them
 function consoleLogCards() {
@@ -67,6 +57,17 @@ function showCards() {
     cardContainer.classList.add("card-container");
     document.querySelector(".container").append(cardContainer);
   
+    //sort the cards
+    const sortedCards = cards.sort((a, b) => {
+      if (a.fields.number < b.fields.number) {
+          return -1;
+      } else if (a.fields.number > b.fields.number) {
+          return 1;
+      } else {
+      return 0;
+    };
+    });
+
     // ** add image to our Container
     var cardImage = document.createElement("img");
     cardImage.classList.add("card-image");
