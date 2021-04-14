@@ -37,10 +37,21 @@ function gotAllCards(err) {
   showCards();
 }
 
+//sort the cards
+const sortedCards = cards.sort((a, b) => {
+  if (a.fields.number < b.fields.number) {
+      return -1;
+  } else if (a.fields.number > b.fields.number) {
+      return 1;
+  } else {
+  return 0;
+};
+});
+
 // just loop through the books and console.log them
 function consoleLogCards() {
   console.log("consoleLogCards()");
-  cards.forEach((card) => {
+  sortedCards.forEach((card) => {
     console.log("Card:", card);
   });
 }
@@ -48,7 +59,7 @@ function consoleLogCards() {
 // look through our airtable data, create elements
 function showCards() {
   console.log("showCards()");
-  cards.forEach((card) => {
+  sortedCards.forEach((card) => {
 
     // ** creating a new div container
     // ** this is where our cards go on
@@ -187,18 +198,47 @@ function showCards() {
 
     // function ready() {}
 
+
+
     /* add */
-    var removeCartItemButtons = document.getElementsByClassName('button1');
-    console.log(removeCartItemButtons);
 
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-      var button = removeCartItemButtons[i]
-      button.addEventListener('click', function(event) {
-        var buttonClicked = event.target
-        buttonClicked.parentElement.remove()
-      })
-    }
+    // var addToCartButtons = document.getElementsByClassName('card-image')
+    // for (var i = 0; i < removeCartItemButtons.length; i++) {
+    //   var button = addToCartButtons[i]
+    //   button.addEventListener('click', addToCartClicked)
+    // }
 
+    // function addToCartClicked(event) {
+    //   var button = event.target
+    //   var shopItem = button.parentElement
+    //   var imageSrc = shopItem.getElementsByClassName('card-image')[0].src
+    //   addItemToCart(imageSrc)
+    // }
+
+    // function addItemToCart(imageSrc) {
+    //   var cartRow = document.createElement('div')
+    //   var cartItems = document.getElementsByClassName('cart')[0]
+    //   var cartRowContents = `
+    //   <div class="cart">
+    //   <h2 class="mycard">My cards</h2>
+    //   <div class="buttons">
+    //     <div class="1 buttonind">
+    //       <button class="button1" type="button">remove</button>
+    //     </div>
+    //     <div class="2 buttonind">
+    //       <button class="button1" type="button">remove</button>
+    //     </div>
+    //     <div class="3 buttonind">
+    //       <button class="button1" type="button">remove</button>
+    //     </div>
+    //   </div>
+    // </div>
+    //   `
+    //   cartRow.innerHTML = cartRowContents
+    //   cartItems.append(cartRow)
+    // }
+
+    // document.getElementsByClassName('card-image').onclick = addItemToCart;
     // var cardAdd = document.createElement("img");
     // cardAdd.classList.add("card-add");
     // cardAdd.src = "images/add.png"
@@ -212,9 +252,9 @@ function showCards() {
     // function // onclick function // 
     // const selectedCards = [];
     const selectedCards = [];
-    document.getElementsByClassName('card-image')[0].onclick = function() {
-      alert('hi');
-    };
+    // document.getElementsByClassName('card-image')[0].onclick = function() {
+
+    // };
     
   });
 }
