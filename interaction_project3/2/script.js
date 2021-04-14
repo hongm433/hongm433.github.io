@@ -49,9 +49,6 @@ function consoleLogCards() {
 function showCards() {
   console.log("showCards()");
   cards.forEach((card) => {
-    // var cardImage = document.createElement("img");
-    // cardImage.src = card.fields.cover_image[0].url;
-    // document.body.append(cardImage);
 
     // ** creating a new div container
     // ** this is where our cards go on
@@ -182,6 +179,13 @@ function showCards() {
     }
     inIt();
 
+    // if (document,readyState == 'loading') {
+    //   document.addEventListener('DOMcontentLoaded', ready)
+    // } else {
+    //   ready()
+    // }
+
+    // function ready() {}
 
     /* add */
     var removeCartItemButtons = document.getElementsByClassName('button1');
@@ -204,6 +208,14 @@ function showCards() {
     // cardContainer.addEventListener('mouseenter', ()=> cardContainer.img = cardAdd);
     // cardContainer.addEventListener('mouseleave', ()=> cardContainer.img = cardAdd);
 
+
+    // function // onclick function // 
+    // const selectedCards = [];
+    const selectedCards = [];
+    document.getElementsByClassName('card-image')[0].onclick = function() {
+      alert('hi');
+    };
     
   });
 }
+
