@@ -49,6 +49,17 @@ function consoleLogCards() {
 // look through our airtable data, create elements
 function showCards() {
   console.log("showCards()");
+
+  //sort the cards
+  const sortedCards = cards.sort((a, b) => {
+    if (a.fields.number < b.fields.number) {
+        return -1;
+    } else if (a.fields.number > b.fields.number) {
+        return 1;
+    } else {
+    return 0;
+  };
+  });
   sortedCards.forEach((card) => {
 
     // ** creating a new div container
@@ -57,16 +68,7 @@ function showCards() {
     cardContainer.classList.add("card-container");
     document.querySelector(".container").append(cardContainer);
   
-    //sort the cards
-    const sortedCards = cards.sort((a, b) => {
-      if (a.fields.number < b.fields.number) {
-          return -1;
-      } else if (a.fields.number > b.fields.number) {
-          return 1;
-      } else {
-      return 0;
-    };
-    });
+
 
     // ** add image to our Container
     var cardImage = document.createElement("img");
@@ -252,7 +254,7 @@ function showCards() {
 
     // function // onclick function // 
     // const selectedCards = [];
-    const selectedCards = [];
+    // const selectedCards = [];
     // document.getElementsByClassName('card-image')[0].onclick = function() {
 
     // };
