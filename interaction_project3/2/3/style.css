@@ -69,9 +69,8 @@ h2 {
     text-decoration: none;
     color: rgb(255, 255, 255, 0.3);
     text-align: center;
-    display: block;
-    margin-right: auto;
-    margin-top: 50px;
+    display: fixed;
+    bottom: 50px;
   }
 
     /* background */
