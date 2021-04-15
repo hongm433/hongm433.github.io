@@ -76,6 +76,45 @@ p {
     color: white;
   }
 
+        /* a blink*/
+        a {
+          animation: blinkText 2s;
+          -webkit-animation: blinkText 2s;
+          -moz-animation: blinkText 2s;
+          -o-animation: blinkText 2s;
+          -ms-animation: blinkText 2s;
+          animation-iteration-count: infinite;
+        }
+        
+        @keyframes blinkText {
+          0% {opacity:0;}
+          50% {opacity: 1;}
+          100% {opacity:0;}
+        }
+        
+        @-moz-keyframes blinkText {
+          0% {opacity:0;}
+          50% {opacity: 1;}
+          100% {opacity:0;}
+        }
+        
+        @-webkit-keyframes blinkText {
+          0% {opacity:0;}
+          50% {opacity: 1;}
+          100% {opacity:0;}
+        }
+        
+        @-o-keyframes blinkText {
+          0% {opacity:0;}
+          50% {opacity: 1;}
+          100% {opacity:0;}
+        }
+        
+        @-ms-keyframes blinkText {
+          0% {opacity:0;}
+          50% {opacity: 1;}
+          100% {opacity:0;}
+        }
   /* background */
 
   .background {
@@ -153,6 +192,46 @@ p {
   a:hover {
     color: white;
   }
+
+      /* a blink*/
+      a {
+        animation: blinkText 2s;
+        -webkit-animation: blinkText 2s;
+        -moz-animation: blinkText 2s;
+        -o-animation: blinkText 2s;
+        -ms-animation: blinkText 2s;
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes blinkText {
+        0% {opacity:0;}
+        50% {opacity: 1;}
+        100% {opacity:0;}
+      }
+      
+      @-moz-keyframes blinkText {
+        0% {opacity:0;}
+        50% {opacity: 1;}
+        100% {opacity:0;}
+      }
+      
+      @-webkit-keyframes blinkText {
+        0% {opacity:0;}
+        50% {opacity: 1;}
+        100% {opacity:0;}
+      }
+      
+      @-o-keyframes blinkText {
+        0% {opacity:0;}
+        50% {opacity: 1;}
+        100% {opacity:0;}
+      }
+      
+      @-ms-keyframes blinkText {
+        0% {opacity:0;}
+        50% {opacity: 1;}
+        100% {opacity:0;}
+      }
   
   /* background */
   
