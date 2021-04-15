@@ -199,18 +199,10 @@ sortedCards.forEach((card) => {
     // }
     document.querySelectorAll('.card-container').forEach(card => {
       card.addEventListener('click', event => {
-        cardContainer.onclick = function() {
+        cardContainer.addEventListener('click', function() {
         cardContainer.style.opacity = .5;
       }
       })
-
-      const parent = document.querySelector(".card-container");
-      parent.addEventListener("click", function(e) {
-       const child = e.target.matches(".card-image, .card-image *");
-       if (child) { // If child is click
-       parent.style.opacity = .5;
-       child.style.opacity = .5;
-  }});
 
     })
 
