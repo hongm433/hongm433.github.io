@@ -178,6 +178,8 @@ h2 {
   /* card */
   .card-container {
     padding: 1.2rem;
+      width: 130px;
+      height: 230px;
   }
 
   .card-image {
