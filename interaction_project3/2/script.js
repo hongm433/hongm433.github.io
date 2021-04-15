@@ -1,12 +1,11 @@
 // load the airtable library, call it "Airtable";
 var Airtable = require("airtable");
-// console.log(Airtable);
 
 // use airtable library, connect to our base using API key
 var base = new Airtable({apiKey: 'keypCzPwGQ1MNfwGP'}).base('applYB2UaWCn7ypjy');
 
 //get our collection base, select all the records
-//specify functionn that will recieve the data
+//specify function that will recieve the data
 base("tarot_cards").select({}).eachPage(gotPageOfCards, gotAllCards);
 
 // an empty array to hold our data
@@ -15,28 +14,27 @@ var cards = [];
 // callback function that receives our data
 function gotPageOfCards(records, fetchNextPage) {
   console.log("gotPageOfCards()");
-  // add the records from this page to our array
-  cards.push(...records);
-  // request more pages
-  fetchNextPage();
+// add the records from this page to our array
+cards.push(...records);
+// request more pages
+fetchNextPage();
 }
 
 // call back function that is called when all pages are loaded
 function gotAllCards(err) {
   console.log("gotAllCards()");
 
-  // report an error, you'd want to do something better than this in production
-  if (err) {
-    console.log("error loading data");
-    console.error(err);
-    return;
-  }
+// report an error, you'd want to do something better than this in production
+ if (err) {
+   console.log("error loading data");
+   console.error(err);
+   return;
+ }
 
-  // call functions to log and show the books
-  consoleLogCards();
-  showCards();
+// call functions to log and show the books
+ consoleLogCards();
+ showCards();
 }
-
 
 // just loop through the books and console.log them
 function consoleLogCards() {
@@ -50,25 +48,24 @@ function consoleLogCards() {
 function showCards() {
   console.log("showCards()");
 
-  //sort the cards
-  const sortedCards = cards.sort((a, b) => {
-    if (a.fields.number < b.fields.number) {
-        return -1;
-    } else if (a.fields.number > b.fields.number) {
-        return 1;
-    } else {
-    return 0;
-  };
-  });
-  sortedCards.forEach((card) => {
+//sort the cards
+const sortedCards = cards.sort((a, b) => {
+   if (a.fields.number < b.fields.number) {
+       return -1;
+   } else if (a.fields.number > b.fields.number) {
+       return 1;
+   } else {
+   return 0;
+ };
+});
+
+sortedCards.forEach((card) => {
 
     // ** creating a new div container
     // ** this is where our cards go on
     var cardContainer = document.createElement("div");
     cardContainer.classList.add("card-container");
     document.querySelector(".container").append(cardContainer);
-  
-
 
     // ** add image to our Container
     var cardImage = document.createElement("img");
@@ -94,76 +91,77 @@ function showCards() {
 
     // ** add event listener to our filter
     // ** to add an active class to our card
+
     // ** 1
     var filterRider = document.querySelector('.rider-waite_tarot_deck');
     filterRider.addEventListener("click", function(){
-
       if (cardContainer.classList.contains("rider-waite_tarot_deck")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 2
     var filterMarseilles = document.querySelector('.tarot_of_marseilles');
     filterMarseilles.addEventListener("click", function(){
-
       if (cardContainer.classList.contains("tarot_of_marseilles")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 3
     var filterMinor = document.querySelector('.minor_arcana');
     filterMinor.addEventListener("click", function() {
-
       if (cardContainer.classList.contains("minor_arcana")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 4
     var filterRussian = document.querySelector('.russian_tiertarock');
     filterRussian.addEventListener("click", function() {
-
       if (cardContainer.classList.contains("russian_tiertarock")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 5
     var filterBavarian = document.querySelector('.bavarian_tarock');
     filterBavarian.addEventListener("click", function() {
-
       if (cardContainer.classList.contains("bavarian_tarock")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 6
     var filterIndustrie = document.querySelector('.industrie_und_gluck');
     filterIndustrie.addEventListener("click", function() {
-
       if (cardContainer.classList.contains("industrie_und_gluck")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** 7
     var filterNouveau = document.querySelector('.tarot_nouveau');
     filterNouveau.addEventListener("click", function() {
-
       if (cardContainer.classList.contains("tarot_nouveau")) {
         cardContainer.style.display = "inline-flex";
       } else {
         cardContainer.style.display = "none";
       }
     });
+
     // ** Reset
     var filterReset = document.querySelector('.js-reset');
     filterReset.addEventListener("click", function(){
@@ -192,6 +190,103 @@ function showCards() {
       }
     }
     inIt();
+
+    // ** create Shopping Cart
+    var cart = document.createElement("aside");
+    cart.classList.add("cart");
+    cardContainer.append(cart);
+
+    var cartItem = document.createElement("div");
+    cartItem.classList.add("cart-items");
+    cart.append(cartItem);
+
+    // ** select cards
+    activateCart();
+
+    function activateCart() {
+      let cart = [];
+
+      function CartItem({ element, original }) {
+        this.element = element;
+        this.original = original;
+      }
+
+      CartItem.prototype.remove = function() {
+        this.element.removr();
+        this.original.style.display = '';
+        cart = cart.filter((item) => item !== this);
+      };
+
+      const nextButton = document.createElement('button');
+      nextButton.className = 'cart-button cart-proceed';
+      nextButton.append('Next');
+      nextButton.addEventListener('click', clearCart);
+
+      document.getElementsByClassName('card-image').querySelectorAll('.cart-container').forEach((container) => { container.addEventListener('click', addToCart(container));
+    });
+
+    function addToCart(selection) {
+      return function(event) {
+        if (cart.length < 3) {
+          const imageClone = event.target.cloneNode(true);
+
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'image-container';
+          imageContainer.appendChild(imageClone);
+
+          const removeButtonn = document.createElement('button');
+          removeButtonn.className = 'cart-button cart-item-remove';
+          removeButtonn.textContent = 'Remove';
+
+          const cartItemEl = document.createElement('div');
+          cartItemEl.className = 'cart-item';
+          cartItemEl.append(imageContainer, removeButton);
+
+          const cartItem = new CartItem({
+            element: cartItemEl,
+            original: selection
+          });
+          cart.push(cartItem);
+
+          removeButton.addEventListener('click', () => {
+            cartItem.remove();
+            if (document.body.contains(nextButton)) {
+              nextButton.remove();
+            }
+          });
+
+          selection.style.display = 'none';
+
+          document.getElementById('cart-items').appendChild(cartItem.element);
+
+          if (cart.length === 3) {
+            document.getElementById('cart').appendChild(nextButton);
+          }
+        }
+      }
+    }
+
+    function clearCart() {
+      cart.forEach((cartItem) => cartItem.remove());
+      nextButton.remove();
+      }
+    }
+      if (parent) {
+        parent.appendChild(fragment);
+        return parent;
+      } else {
+        return fragment;
+      };
+
+      
+    // ** click -> selected
+    // var selectedCard = document.querySelector('.card-image');
+
+    //     selectedCard.onclick = function() {
+    //     // selectedCard[i].style.opacity = .6;
+    //     alert('hi');
+    // }
+
 
     // if (document,readyState == 'loading') {
     //   document.addEventListener('DOMcontentLoaded', ready)
@@ -259,6 +354,5 @@ function showCards() {
 
     // };
     
-  });
-}
-
+  })
+};

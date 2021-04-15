@@ -139,3 +139,36 @@ html {
 .buttonind {
   margin-left: 5px;
 }
+
+/* cart */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#cart {
+  padding: var(--gutter);
+  position: fixed;
+  bottom: 0;
+  max-width: 55ch;
+  background-color: #ddd;
+  z-index: 10; 
+}
+
+#cart-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: var(--gutter);
+}
+
+.cart-button {
+  width: 100%;
+}
+
+.cart-item-remove {
+  margin-top: calc(var(--gutter) / 2);
+}
+
+.cart-proceed {
+  margin-top: var(--gutter);
+}
