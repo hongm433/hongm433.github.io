@@ -40,95 +40,99 @@ p {
 
 /* landscape */
 @media screen and (orientation: landscape) {
-.rotate {
-  display: none;
-}
-/* container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 92vh;
-}
+  /* portrait display-> none */
+  .rotate {
+    display: none;
+  }
+  p {
+    display: none;
+  }
+  /* container */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+  }
 
-h1 {
-  font-family: "adobe-garamond-pro", serif;
-  font-size: 45px;
-  color: #E1CD76;
-}
+  h1 {
+    font-family: "adobe-garamond-pro", serif;
+    font-size: 45px;
+    color: #E1CD76;
+  }
 
-a {
-  color: rgb(255, 255, 255, 0.3);
-  font-family: Helvetica, sans-serif;
-  font-size: 16px;
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  position: relative;
-  top: -125px;
-}
+  a {
+    color: rgb(255, 255, 255, 0.3);
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -125px;
+  }
 
-a:hover {
-  color: white;
-}
+  a:hover {
+    color: white;
+  }
 
-/* background */
+  /* background */
 
-.background {
-  position: fixed;
-  top: 26%;
-  left: 36%;
-  z-index: -1;
-  opacity: 0.6;
-}
-
-
-.fig1 {
-  position: absolute;
-  width: 185px;
-  height: 208px;
-
-  background: rgba(242, 13, 33, 0.22);
-  filter: blur(100px);
-  backdrop-filter: blur(4px);
-}
+  .background {
+    position: fixed;
+    top: 26%;
+    left: 36%;
+    z-index: -1;
+    opacity: 0.6;
+  }
 
 
-.fig2 {
-  position: absolute;
-  width: 188px;
-  height: 164px;
+  .fig1 {
+    position: absolute;
+    width: 185px;
+    height: 208px;
 
-  background: rgba(144, 145, 130, 0.22);
-  filter: blur(100px);
-}
+    background: rgba(242, 13, 33, 0.22);
+    filter: blur(100px);
+    backdrop-filter: blur(4px);
+  }
 
-.fig3 {
-  position: absolute;
-  width: 188px;
-  height: 164px;
 
-  background: rgba(144, 145, 130, 0.06);
-  filter: blur(100px);
-}
+  .fig2 {
+    position: absolute;
+    width: 188px;
+    height: 164px;
 
-.fig4 {
-  position: absolute;
-  width: 478px;
-  height: 455px;
+    background: rgba(144, 145, 130, 0.22);
+    filter: blur(100px);
+  }
 
-  background: rgba(56, 50, 50, 0.22);
-  filter: blur(100px);
-}
+  .fig3 {
+    position: absolute;
+    width: 188px;
+    height: 164px;
 
-.fig5 {
-  position: absolute;
-  width: 193px;
-  height: 184px;
+    background: rgba(144, 145, 130, 0.06);
+    filter: blur(100px);
+  }
 
-  background: rgba(58, 42, 31, 0.17);
-  filter: blur(100px);
-}
+  .fig4 {
+    position: absolute;
+    width: 478px;
+    height: 455px;
+
+    background: rgba(56, 50, 50, 0.22);
+    filter: blur(100px);
+  }
+
+  .fig5 {
+    position: absolute;
+    width: 193px;
+    height: 184px;
+
+    background: rgba(58, 42, 31, 0.17);
+    filter: blur(100px);
+  }
 }
 /* desktop */
 
