@@ -3,6 +3,8 @@ html {
 }
 
 /* portrait */
+
+/* landscape -> off */
 .container {
   display: none;
 }
@@ -10,7 +12,7 @@ html {
 a {
   display: none;
 }
-
+/* rotate */
 h2 {
   color: rgba(242, 13, 33, 0.7);
   font-family: "adobe-garamond-pro", serif;
@@ -18,6 +20,14 @@ h2 {
   text-align: center;
 }
 
+p {
+  color: rgb(255, 255, 255, 0.3);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  top: -310px;
+}
 .rotate {
   width: 80%;
   display: flex;
@@ -28,6 +38,7 @@ h2 {
   margin-right: auto;
 }
 
+/* landscape */
 @media screen and (orientation: landscape) {
 .rotate {
   display: none;
