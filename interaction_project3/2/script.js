@@ -191,12 +191,13 @@ sortedCards.forEach((card) => {
     }
     inIt();
 
+
     // ** click -> selected
-    var selectedCard = document.querySelectorAll('.card-image')[0];
+    var selectedCard = document.querySelector('.card-container');
         selectedCard.onclick = function() {
-                    selectedCard.style.opacity = .3;
-        }
-    
+        selectedCard.style.opacity = .3;
+    }
+
     
   })
 };

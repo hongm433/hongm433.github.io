@@ -135,6 +135,10 @@ h2 {
     width: 100%;
     height: auto;
   }
+
+  .clicked {
+    color: white;
+  }
 }
 
 @media only screen and (min-width: 813px) {
@@ -186,69 +190,8 @@ h2 {
     cursor: pointer;
   }
 
+  .clicked {
+    color: white;
+  }
+
 }
-
-/* my card collection */
-/* .mycard {
-  font-size: 16px;
-  font-weight: bold;
-  color: black;
-  font-family: Helvetica, sans-serif;
-  margin-left: 20px;
-  margin-bottom: 1.5rem;
-}
-
-.cart {
-  width: 30%;
-  height: 150px;
-  background-color: rgb(255, 255, 255);
-  float: left;
-  position: fixed;
-  bottom: 0px;
-  z-index: 100;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: left;
-  margin-left: 10px;
-}
-
-.buttonind {
-  margin-left: 5px;
-} */
-
-/* cart */
-/* *, *:before, *:after {
-  box-sizing: inherit;
-}
-
-#cart {
-  padding: var(--gutter);
-  position: fixed;
-  bottom: 0;
-  max-width: 55ch;
-  background-color: #ddd;
-  z-index: 10; 
-}
-
-#cart-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-gap: var(--gutter);
-}
-
-.cart-button {
-  width: 100%;
-}
-
-.cart-item-remove {
-  margin-top: calc(var(--gutter) / 2);
-}
-
-.cart-proceed {
-  margin-top: var(--gutter);
-} */
