@@ -58,7 +58,7 @@ h2 {
     color: #E1CD76;
   }
 
-  /* help */
+  /* next */
   .next-container {
     width: 80px;
     height: 50px;
@@ -153,13 +153,17 @@ h2 {
     display: none;
   }
 
-  /* help */
+  /* next */
+  .next-container {
+    z-index: 90;
+  }
   .next {
-    color: rgb(255, 255, 255, 0.3);
+    color: black;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 16px;
+    right: 18px;
     cursor: pointer;
+    z-index: 100;
   }
 
   /* filter */
