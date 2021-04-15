@@ -2,114 +2,176 @@ html {
   background-color: #121212;
 }
 
-/* title */
-.title {
-  font-weight: bold;
-  font-size: 40px;
-  text-align: center;
+/* portrait */
+.title-container, .filter-container, .help, .container, .next-container {
+  display: none;
+}
+
+h2 {
+  color: rgba(242, 13, 33, 0.7);
   font-family: "adobe-garamond-pro", serif;
-  font-weight: 500;
-  margin: 60px 0 10px 0;
-  color: #E1CD76;
-}
-
-.question {
-  position: absolute;
-  top: 70px;
-  right: 20%;
-}
-
-/* help */
-.help {
-  font-family: Helvetica, sans-serif;
-  color: rgb(255, 255, 255, 0.3);
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.help:hover {
-  color: white;
-}
-
-/* direction */
-.direction {
-  font-family: Helvetica, sans-serif;
-  margin-top: 0;
-  margin-bottom: 100px;
-  color: rgb(255, 255, 255, 0.3);
-  font-size: 16px;
+  font-size: 28px;
   text-align: center;
 }
 
-/* filter */
-.filter {
-  margin-left: 50px;
-  float: left;
-  width: 30%;
-}
-
-.filter-title {
-  font-size: 16px;
-  margin-bottom: 1.5rem;
-  font-weight: 100;
+.turnoff {
   color: rgb(255, 255, 255, 0.3);
   font-family: Helvetica, sans-serif;
-}
-
-.ind {
-  font-size: 20px;
-  display: block;
-  margin-bottom: 1.3rem;
-  color: rgb(255, 255, 255, 0.5);
-  cursor: pointer;
-  font-family: "adobe-garamond-pro", serif;
-  font-weight: 400;
-}
-
-/* card */
-.container {
-  /* margin-left: 30%; */
-  width: 65%;
-  float: right;
-  margin-bottom: 50px;
-}
-
-.card-container {
-  padding: 1.2rem;
-  width: 130px;
-  height: 230px;
-  display: inline-flex;
-  flex: left;
+  font-size: 16px;
+  text-align: center;
   position: relative;
-  /* display: grid; */
-  /* grid-gap: 2rem; */
-  /* 50 50 */
-  /* grid-template-columns: 1fr 1fr; */
+  top: -300px;
+}
+.rotate {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card-image {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
+@media screen and (orientation: landscape) {
+  .title-container, .filter-container, .help, .container, .next-container  {
+    display: block;
+  }
+
+  /* portrait display: none */
+  h2, .turnoff, .rotate, {
+    display: none;
+  }
+
+  /* title */
+  .title {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    font-family: "adobe-garamond-pro", serif;
+    font-weight: 500;
+    margin: 60px 0 10px 0;
+    color: #E1CD76;
+  }
+
+  /* help */
+  .next-container {
+    width: 80px;
+    height: 50px;
+    z-index: 90;
+    background-color: rgb(255, 255, 255, 0.5);
+    position: fixed;
+    top:0px;
+    right:0px;
+  }
+  .next {
+    font-family: Helvetica, sans-serif;
+    color: black;
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  /* direction */
+  .direction {
+    font-family: Helvetica, sans-serif;
+    margin-top: 0;
+    margin-bottom: 100px;
+    color: rgb(255, 255, 255, 0.3);
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* filter */
+  .filter {
+    margin-left: 30px;
+    float: left;
+    width: 30%;
+  }
+
+  .filter-title {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    font-weight: 100;
+    color: rgb(255, 255, 255, 0.3);
+    font-family: Helvetica, sans-serif;
+  }
+
+  .ind {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 1.3rem;
+    color: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-family: "adobe-garamond-pro", serif;
+    font-weight: 400;
+  }
+
+  /* card */
+  .container {
+    width: 65%;
+    float: right;
+    margin-bottom: 50px;
+  }
+
+  .card-container {
+    padding: 1.1rem;
+    width: 130px;
+    height: 230px;
+    display: inline-flex;
+    flex: left;
+    position: relative;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
 }
-/* 
-.card-image.active {
-  display: block;
-} */
 
+@media only screen and (min-width: 813px) {
+  .title-container, .filter-container, .help, .container, .next-container  {
+    display: block;
+  }
+  /* portrait display: none */
+  h2, .turnoff, .rotate {
+    display: none;
+  }
 
-/* click */
-.clicked {
-  color: white;
+  /* help */
+  .next {
+    color: rgb(255, 255, 255, 0.3);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  /* filter */
+  .filter {
+    margin-left: 50px;
+  }
+
+  .ind {
+    font-size: 20px;
+  }
+
+  /* card */
+  .card-container {
+    padding: 1.2rem;
+  }
+
+  .card-image {
+    cursor: pointer;
+  }
+
 }
-
 
 /* my card collection */
-.mycard {
+/* .mycard {
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -138,7 +200,7 @@ html {
 
 .buttonind {
   margin-left: 5px;
-}
+} */
 
 /* cart */
 /* *, *:before, *:after {
