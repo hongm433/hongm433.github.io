@@ -7,12 +7,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  min-height: 92vh;
 }
 
 h1 {
   font-family: "adobe-garamond-pro", serif;
-  font-size: 80px;
+  font-size: 30px;
   color: #E1CD76;
 }
 
@@ -24,7 +24,7 @@ a {
   display: block;
   text-align: center;
   position: relative;
-  top: -260px;
+  top: -330px;
 }
 
 a:hover {
@@ -44,8 +44,8 @@ a:hover {
 
 .fig1 {
   position: absolute;
-  width: 378px;
-  height: 341px;
+  width: 185px;
+  height: 208px;
 
   background: rgba(242, 13, 33, 0.22);
   filter: blur(100px);
@@ -55,8 +55,8 @@ a:hover {
 
 .fig2 {
   position: absolute;
-  width: 307.56px;
-  height: 268.3px;
+  width: 188px;
+  height: 164px;
 
   background: rgba(144, 145, 130, 0.22);
   filter: blur(100px);
@@ -64,8 +64,8 @@ a:hover {
 
 .fig3 {
   position: absolute;
-  width: 307.56px;
-  height: 268.3px;
+  width: 188px;
+  height: 164px;
 
   background: rgba(144, 145, 130, 0.06);
   filter: blur(100px);
@@ -73,8 +73,8 @@ a:hover {
 
 .fig4 {
   position: absolute;
-  width: 782px;
-  height: 744.37px;
+  width: 478px;
+  height: 455px;
 
   background: rgba(56, 50, 50, 0.22);
   filter: blur(100px);
@@ -82,9 +82,64 @@ a:hover {
 
 .fig5 {
   position: absolute;
-  width: 315.74px;
-  height: 301.02px;
+  width: 193px;
+  height: 184px;
 
   background: rgba(58, 42, 31, 0.17);
   filter: blur(100px);
+}
+
+/* desktop */
+
+@media only screen and (min-width: 768px) {
+  .container {
+    min-height: 95vh;
+  }
+  
+  h1 {
+    font-size: 80px;
+  }
+  
+  a {
+    font-size: 16px;
+    top: -260px;
+  }
+  
+  a:hover {
+    color: white;
+  }
+  
+  /* background */
+  
+  .background {
+    top: 26%;
+    left: 36%;
+  }
+  
+  
+  .fig1 {
+    width: 378px;
+    height: 341px;
+  }
+  
+  
+  .fig2 {
+    width: 307.56px;
+    height: 268.3px;
+  }
+  
+  .fig3 {
+    width: 307.56px;
+    height: 268.3px;
+  }
+  
+  .fig4 {
+    width: 782px;
+    height: 744.37px;
+  }
+  
+  .fig5 {
+    width: 315.74px;
+    height: 301.02px;
+  }
 }
