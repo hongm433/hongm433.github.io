@@ -42,7 +42,7 @@ h2 {
 
 h1 {
   font-family: "adobe-garamond-pro", serif;
-  font-size: 30px;
+  font-size: 45px;
   color: #E1CD76;
 }
 
@@ -54,7 +54,7 @@ a {
   display: block;
   text-align: center;
   position: relative;
-  top: -330px;
+  top: -125px;
 }
 
 a:hover {
@@ -121,7 +121,7 @@ a:hover {
 }
 /* desktop */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 813px) {
   .container {
     min-height: 95vh;
   }
