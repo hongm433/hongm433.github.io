@@ -199,9 +199,9 @@ sortedCards.forEach((card) => {
     // }
     document.querySelectorAll('.card-container').forEach(card => {
       card.addEventListener('click', event => {
-        cardContainer.onclick = function() {
+        cardContainer.addEventListener('click', function() {
         cardContainer.style.opacity = .5;
-      }
+      })
       })
 
       const parent = document.querySelector(".card-container");
