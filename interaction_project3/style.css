@@ -2,6 +2,36 @@ html {
   background-color: #121212;
 }
 
+/* portrait */
+.container {
+  display: none;
+}
+
+a {
+  display: none;
+}
+
+h2 {
+  color: rgba(242, 13, 33, 0.7);
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.rotate {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (orientation: landscape) {
+.rotate {
+  display: none;
+}
 /* container */
 .container {
   display: flex;
@@ -88,7 +118,7 @@ a:hover {
   background: rgba(58, 42, 31, 0.17);
   filter: blur(100px);
 }
-
+}
 /* desktop */
 
 @media only screen and (min-width: 768px) {
