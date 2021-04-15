@@ -33,13 +33,18 @@ h2 {
 }
 
 @media screen and (orientation: landscape) {
-  .title-container, .filter-container, .help, .container, .next-container  {
-    display: block;
-  }
-
   /* portrait display: none */
-  h2, .turnoff, .rotate, {
+  h2 {
     display: none;
+  }
+  .turnoff {
+    display: none;
+  }
+  .rotate {
+    display: none;
+  }
+  .title-container, .filter-container, .help, .container, .next-container {
+    display: block;
   }
 
   /* title */
@@ -133,11 +138,18 @@ h2 {
 }
 
 @media only screen and (min-width: 813px) {
-  .title-container, .filter-container, .help, .container, .next-container  {
+  .title-container, .filter-container, .help, .container, .next-container {
     display: block;
   }
+
   /* portrait display: none */
-  h2, .turnoff, .rotate {
+  h2 {
+    display: none;
+  }
+  .turnoff {
+    display: none;
+  }
+  .rotate {
     display: none;
   }
 

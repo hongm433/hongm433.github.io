@@ -1,58 +1,214 @@
 html {
   background-color: #121212;
 }
+
+/* portrait */
+#search, .restart, .background {
+  display: none;
+}
+
+h2 {
+  color: rgba(242, 13, 33, 0.7);
+  font-family: "adobe-garamond-pro", serif;
+  font-size: 28px;
+  text-align: center;
+}
+
+.turnoff {
+  color: rgb(255, 255, 255, 0.3);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  top: -300px;
+}
+.rotate {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* landscape */
+@media screen and (orientation: landscape) {
+  /* portrait display: none */
+  h2 {
+    display: none;
+  }
+  .turnoff {
+    display: none;
+  }
+  .rotate {
+    display: none;
+  }
+  #search, .restart, .background {
+    display: block;
+  }
+
+  /* body */
+  input {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    border: none;
+    font-family: "adobe-garamond-pro", serif;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(18, 18, 18, 0);
+    color: #E1CD76;
+    margin-top: 10%;
+  }
+  
+  /* restart */
+  .restart {
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.3);
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+    /* background */
+
+    .background {
+      position: fixed;
+      top: 26%;
+      left: 36%;
+      z-index: -1;
+      opacity: 0.6;
+    }
+  
+  
+    .fig1 {
+      position: absolute;
+      width: 185px;
+      height: 208px;
+  
+      background: rgba(242, 13, 33, 0.22);
+      filter: blur(100px);
+      backdrop-filter: blur(4px);
+    }
+  
+  
+    .fig2 {
+      position: absolute;
+      width: 188px;
+      height: 164px;
+  
+      background: rgba(144, 145, 130, 0.22);
+      filter: blur(100px);
+    }
+  
+    .fig3 {
+      position: absolute;
+      width: 188px;
+      height: 164px;
+  
+      background: rgba(144, 145, 130, 0.06);
+      filter: blur(100px);
+    }
+  
+    .fig4 {
+      position: absolute;
+      width: 478px;
+      height: 455px;
+  
+      background: rgba(56, 50, 50, 0.22);
+      filter: blur(100px);
+    }
+  
+    .fig5 {
+      position: absolute;
+      width: 193px;
+      height: 184px;
+  
+      background: rgba(58, 42, 31, 0.17);
+      filter: blur(100px);
+    }
+}
+
 /* desktop */
-input {
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  border: none;
-  font-family: "adobe-garamond-pro", serif;
-  font-weight: bold;
-  font-size: 45px;
-  background-color: #121212;
-  color: #E1CD76;;
-}
+@media only screen and (min-width: 813px) {
+  /* portrait display: none */
+  h2 {
+    display: none;
+  }
+  .turnoff {
+    display: none;
+  }
+  .rotate {
+    display: none;
+  }
+  #search, .restart, .background {
+    display: block;
+  }
 
-/* restart */
-.restart {
-  font-size: 16px;
-  font-family: Helvetica, sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255, 0.3);
-  text-align: center;
-  display: block;
-  margin-right: auto;
-  margin-top: 50px;
-}
+    /* body */
+  input {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    border: none;
+    font-family: "adobe-garamond-pro", serif;
+    font-weight: bold;
+    font-size: 45px;
+    background-color: rgb(18, 18, 18, 0);
+    color: #E1CD76;;
+  }
+  
+  /* restart */
+  .restart {
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.3);
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  
+  .restart:hover {
+    color: white;
+  }
 
-.restart:hover {
-  color: white;
-}
-/* body */
-/* mobile */
-@media screen and (orientation: landscape) and (max-device-width: 767px) {
-input {
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  border: none;
-  font-family: "adobe-garamond-pro", serif;
-  font-weight: bold;
-  font-size: 30px;
-  background-color: #121212;
-  color: #E1CD76;;
-}
-
-/* restart */
-.restart {
-  font-size: 16px;
-  font-family: Helvetica, sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255, 0.3);
-  text-align: center;
-  display: block;
-  margin-right: auto;
-  margin-top: 50px;
-}
+  /* background */
+  
+  .background {
+    top: 26%;
+    left: 36%;
+  }
+  
+  
+  .fig1 {
+    width: 378px;
+    height: 341px;
+  }
+  
+  
+  .fig2 {
+    width: 307.56px;
+    height: 268.3px;
+  }
+  
+  .fig3 {
+    width: 307.56px;
+    height: 268.3px;
+  }
+  
+  .fig4 {
+    width: 782px;
+    height: 744.37px;
+  }
+  
+  .fig5 {
+    width: 315.74px;
+    height: 301.02px;
+  }
 }
