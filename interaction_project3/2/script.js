@@ -209,7 +209,6 @@ sortedCards.forEach((card) => {
        const child = e.target.matches(".card-image, .card-image *");
        if (child) { // If child is click
        parent.style.opacity = .5;
-       child.style.opacity =
   }});
 
     })
