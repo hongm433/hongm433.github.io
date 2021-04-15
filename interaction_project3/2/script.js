@@ -193,11 +193,16 @@ sortedCards.forEach((card) => {
 
 
     // ** click -> selected
-    var selectedCard = document.querySelector('.card-container');
-        selectedCard.onclick = function() {
-        selectedCard.style.opacity = .3;
-    }
-
-    
+    // var selectedCard = document.querySelector('.card-container');
+    //     selectedCard.onclick = function() {
+    //     selectedCard.style.opacity = .3;
+    // }
+    document.querySelectorAll('.card-container').forEach(card => {
+      card.addEventListener('click', event => {
+        cardContainer.onclick = function() {
+        cardContainer.style.opacity = .5;
+      }
+      })
+    })
   })
 };
