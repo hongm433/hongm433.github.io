@@ -1,6 +1,6 @@
 A=new Array();
 A[0]="Something will happen soon. Keep up the good work."
-A[1]="You should experience new things. Challenge yourself!"
+A[1]="You should experience new things. Challenge yourself !"
 A[2]="If you do not try anything, there is no change."
 A[3]="You will get a new opportunity soon! Prepare and get it."
 A[4]="All fortunes are yours. May the grace of God be with you."
