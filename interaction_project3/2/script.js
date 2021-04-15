@@ -204,5 +204,13 @@ sortedCards.forEach((card) => {
       }
       })
     })
+
+    const parent = document.querySelector(".card-container");
+    parent.addEventListener("click", function(e) {
+     const child = e.target.matches(".card-image, .card-image *");
+     if (child) { // If child is click
+     parent.style.opacity = .5;
+}});
+
   })
 };
