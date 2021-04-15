@@ -201,91 +201,91 @@ sortedCards.forEach((card) => {
     cart.append(cartItem);
 
     // ** select cards
-    activateCart();
+    // activateCart();
 
-    function activateCart() {
-      let cart = [];
+    // function activateCart() {
+    //   let cart = [];
 
-      function CartItem({ element, original }) {
-        this.element = element;
-        this.original = original;
-      }
+    //   function CartItem({ element, original }) {
+    //     this.element = element;
+    //     this.original = original;
+    //   }
 
-      CartItem.prototype.remove = function() {
-        this.element.removr();
-        this.original.style.display = '';
-        cart = cart.filter((item) => item !== this);
-      };
+    //   CartItem.prototype.remove = function() {
+    //     this.element.removr();
+    //     this.original.style.display = '';
+    //     cart = cart.filter((item) => item !== this);
+    //   };
 
-      const nextButton = document.createElement('button');
-      nextButton.className = 'cart-button cart-proceed';
-      nextButton.append('Next');
-      nextButton.addEventListener('click', clearCart);
+    //   const nextButton = document.createElement('button');
+    //   nextButton.className = 'cart-button cart-proceed';
+    //   nextButton.append('Next');
+    //   nextButton.addEventListener('click', clearCart);
 
-      document.getElementsByClassName('card-image').querySelectorAll('.cart-container').forEach((container) => { container.addEventListener('click', addToCart(container));
-    });
+    //   document.getElementsByClassName('card-image').querySelectorAll('.cart-container').forEach((container) => { container.addEventListener('click', addToCart(container));
+    // });
 
-    function addToCart(selection) {
-      return function(event) {
-        if (cart.length < 3) {
-          const imageClone = event.target.cloneNode(true);
+    // function addToCart(selection) {
+    //   return function(event) {
+    //     if (cart.length < 3) {
+    //       const imageClone = event.target.cloneNode(true);
 
-          const imageContainer = document.createElement('div');
-          imageContainer.className = 'image-container';
-          imageContainer.appendChild(imageClone);
+    //       const imageContainer = document.createElement('div');
+    //       imageContainer.className = 'image-container';
+    //       imageContainer.appendChild(imageClone);
 
-          const removeButtonn = document.createElement('button');
-          removeButtonn.className = 'cart-button cart-item-remove';
-          removeButtonn.textContent = 'Remove';
+    //       const removeButtonn = document.createElement('button');
+    //       removeButtonn.className = 'cart-button cart-item-remove';
+    //       removeButtonn.textContent = 'Remove';
 
-          const cartItemEl = document.createElement('div');
-          cartItemEl.className = 'cart-item';
-          cartItemEl.append(imageContainer, removeButton);
+    //       const cartItemEl = document.createElement('div');
+    //       cartItemEl.className = 'cart-item';
+    //       cartItemEl.append(imageContainer, removeButton);
 
-          const cartItem = new CartItem({
-            element: cartItemEl,
-            original: selection
-          });
-          cart.push(cartItem);
+    //       const cartItem = new CartItem({
+    //         element: cartItemEl,
+    //         original: selection
+    //       });
+    //       cart.push(cartItem);
 
-          removeButton.addEventListener('click', () => {
-            cartItem.remove();
-            if (document.body.contains(nextButton)) {
-              nextButton.remove();
-            }
-          });
+    //       removeButton.addEventListener('click', () => {
+    //         cartItem.remove();
+    //         if (document.body.contains(nextButton)) {
+    //           nextButton.remove();
+    //         }
+    //       });
 
-          selection.style.display = 'none';
+    //       selection.style.display = 'none';
 
-          document.getElementById('cart-items').appendChild(cartItem.element);
+    //       document.getElementById('cart-items').appendChild(cartItem.element);
 
-          if (cart.length === 3) {
-            document.getElementById('cart').appendChild(nextButton);
-          }
-        }
-      }
-    }
-
-    function clearCart() {
-      cart.forEach((cartItem) => cartItem.remove());
-      nextButton.remove();
-      }
-    }
-      if (parent) {
-        parent.appendChild(fragment);
-        return parent;
-      } else {
-        return fragment;
-      };
-
-      
-    // ** click -> selected
-    // var selectedCard = document.querySelector('.card-image');
-
-    //     selectedCard.onclick = function() {
-    //     // selectedCard[i].style.opacity = .6;
-    //     alert('hi');
+    //       if (cart.length === 3) {
+    //         document.getElementById('cart').appendChild(nextButton);
+    //       }
+    //     }
+    //   }
     // }
+
+    // function clearCart() {
+    //   cart.forEach((cartItem) => cartItem.remove());
+    //   nextButton.remove();
+    //   }
+    // }
+    //   if (parent) {
+    //     parent.appendChild(fragment);
+    //     return parent;
+    //   } else {
+    //     return fragment;
+    //   };
+
+
+    // ** click -> selected
+    var selectedCard = document.querySelector('.card-container');
+        selectedCard.onclick = function() {
+        selectedCard.style.opacity = .3;
+    }
+
+    
 
 
     // if (document,readyState == 'loading') {

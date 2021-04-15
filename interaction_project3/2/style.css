@@ -141,7 +141,7 @@ html {
 }
 
 /* cart */
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: inherit;
 }
 
@@ -171,4 +171,4 @@ html {
 
 .cart-proceed {
   margin-top: var(--gutter);
-}
+} */
