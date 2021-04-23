@@ -201,4 +201,6 @@ div3.addEventListener('click', function(){
 
 //scroll
 
-new fullpage('#full-page', {});
+new fullpage('#full-page', {
+  licenseKey: ''
+});
