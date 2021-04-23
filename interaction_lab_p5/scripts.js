@@ -1,21 +1,8 @@
 
-
-// // make a sandwiches
-// let meat1 = "ham";
-// let veg1 = "lettuce";
-// let bread1 = "wheat";
-
-// function makeSandwich(meat, vegetable, bread){
-//   let sandwich = meat + vegetable + bread;
-//   return sandwich;
-// }
-
-// let hamSandwich = makeSandwich(meat1, veg1, bread1);
-
 /* recipe 1 */
 // make DIV tag
 var div1 = document.createElement("div");
-div1.classList.add("recipe1", "recipe");
+div1.classList.add("recipe1", "recipe", "section");
 
 var maindiv = document.getElementsByClassName('recipes')[0];
 maindiv.appendChild(div1);
@@ -38,7 +25,7 @@ div1.appendChild(title1);
 /* recipe 2 */
 // make DIV tag
 var div2 = document.createElement("div");
-div2.classList.add("recipe2", "recipe");
+div2.classList.add("recipe2", "recipe", "section");
 
 maindiv.appendChild(div2);
 
@@ -60,7 +47,7 @@ div2.appendChild(title2);
 /* recipe 3 */
 // make DIV tag
 var div3 = document.createElement("div");
-div3.classList.add("recipe3", "recipe");
+div3.classList.add("recipe3", "recipe", "section");
 
 maindiv.appendChild(div3);
 
@@ -202,3 +189,10 @@ div3.addEventListener('click', function(){
   direction3.style.display = "block";
   p3d.style.display = "block";
 })
+
+
+
+
+//scroll
+
+new fullpage('#full-page', {});
