@@ -7,13 +7,14 @@ h1 {
   font-family: Georgia, serif;
   text-align: center;
   font-size: 40px;
-  margin: 50px 0;
+  margin: 50px 0 0 0;
   color: #EE8E12;
 }
 
 /* recipes */
 .recipes {
   text-align: center;
+  margin-top: -40px;
 }
 .recipe {
   display: block;
