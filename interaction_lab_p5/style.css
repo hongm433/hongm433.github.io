@@ -15,13 +15,16 @@ h1 {
 .recipes {
   text-align: center;
   margin-top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
 }
 .recipe {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
-  width: 500px;
+  width: 400px;
   cursor: pointer;
 }
 .recipe-title {
@@ -31,8 +34,8 @@ h1 {
 }
 
 .recipe-img {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   overflow: cover;
 }
 

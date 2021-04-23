@@ -102,6 +102,8 @@ direction1.innerText = "Directions";
 p1d.innerText = "1. Slice garlic thinly. \r\n2. Pour extra-virgin olive oil in a skillet\r\n3. Put garlic and shrimp oil in the skillet, and add some salt and pepperoncini\r\n4. When every ingredient is cooked, enjoy your Gambas with bread."
 // click event
 div1.addEventListener('click', function(){
+  img1.style.width = "100px";
+  img1.style.height = "100px";
   p1.style.display = "block";
   ingredient1.style.display = "block";
   direction1.style.display = "block";
@@ -143,6 +145,8 @@ direction2.innerText = "Directions";
 p2d.innerText = "1. Add coconut water to your blender. \r\n2. Wash kale and green grapes, and add them with pineapple to the blender. \r\n3. Blend away! Enjoy your juice!"
 // click event
 div2.addEventListener('click', function(){
+  img2.style.width = "100px";
+  img2.style.height = "100px";
   p2.style.display = "block";
   ingredient2.style.display = "block";
   direction2.style.display = "block";
@@ -184,6 +188,8 @@ direction3.innerText = "Directions";
 p3d.innerText = "1. On the oven pan, layer eggplant, lagu sauce, and cheese in order. \r\n2. Repeat it three times. \r\n3. Put it in the oven and bake it for 10 minutes. If cheese does not melt, bake it more."
 // click event
 div3.addEventListener('click', function(){
+  img3.style.width = "100px";
+  img3.style.height = "100px";
   p3.style.display = "block";
   ingredient3.style.display = "block";
   direction3.style.display = "block";
