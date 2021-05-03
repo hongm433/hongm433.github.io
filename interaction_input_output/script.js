@@ -4,6 +4,9 @@ let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
 let line = document.querySelector('#line');
 let character = document.querySelector('#character');
+  character.style.setProperty('--translate', 0);
+  character.style.setProperty('--scale', 1);
+  character.style.setProperty('--rotate', 0);
 let characterName = document.querySelector('#charactername');
 let ten = 10;
 
@@ -102,16 +105,7 @@ document.addEventListener("keydown", function(event){
     characterName.style.color = characterColorChange;
     result.innerText = "[c]: character and name color change";
   }
-  //      (d = default)
-  if (event.key == "d"){
-    characterName.innerText = "Jennie";
-    line.style.backgroundColor = "black";
-    characterName.style.color = "black";
-    character.style.backgroundColor = "white";
-    character.style.borderColor = "black";
-    document.body.style.backgroundColor = "white";
-    result.innerText = "[d]: default";
-  }
+
   //      (l = line color change)
   if (event.key == "l"){
     line.style.backgroundColor = generateRandomColor();
@@ -122,27 +116,55 @@ document.addEventListener("keydown", function(event){
     characterName.innerText = generateName();
     result.innerText = "[n]: name change";
   }
+  //      (r = rotate the character )
+  if (event.key === 'r') {
+    const rotate = Number(character.style.getPropertyValue('--rotate'));
+    character.style.setProperty('--rotate', rotate + 45);
+    result.innerText = "[r]: rotate the character";
+  }  
   //      (s = stroke color change)
   if (event.key == "s"){
     character.style.borderColor = generateRandomColor();
     result.innerText = "[s]: stroke color change";
   }
-  //      (leftArrow = reduce size)
-  if (event.key == "ArrowLeft"){
-    console.log(event.key);
-    character.style.position = "absolute";
-    character.style.left = '100px';
-    console.log(character.style.position);
-    result.innerText = "[Left arrow]: move left";
-  }  
-  //      (- = reduce size)
-  if (event.key == "-"){
-    let characterWidth = character.style.width
-    let characterHeight = character.style.height
-    characterWidth = characterWidth - ten + 'px';
-    characterHeight = characterHeight - ten + 'px';
-    result.innerText = "[s]: stroke color change";
+  //      (left arrow = move left)
+  if (event.key === 'ArrowLeft') {
+    const translate = Number(character.style.getPropertyValue('--translate'));
+    character.style.setProperty('--translate', translate - 5);
+    result.innerText = "[left arrow]: move left";
   }
+  //      (right arrow = move right)
+  if (event.key === 'ArrowRight') {
+    const translate = Number(character.style.getPropertyValue('--translate'));
+    character.style.setProperty('--translate', translate + 5);
+    result.innerText = "[right arrow]: move right";
+  }
+  //      (- = scale down) 
+  if (event.key === '-') {
+    const scale = Number(character.style.getPropertyValue('--scale'));
+    character.style.setProperty('--scale', Math.max(scale - 0.1, 0));
+    result.innerText = "[-]: reduce size";
+  }
+  //      (=/+ = scale up)
+  if (event.key === '=') {
+    const scale = Number(character.style.getPropertyValue('--scale'));
+    character.style.setProperty('--scale', scale + 0.1);
+    result.innerText = "[+]: increase size";
+  }
+
+
+  //      (d = default)
+  if (event.key == "d"){
+    characterName.innerText = "Jennie";
+    line.style.backgroundColor = "black";
+    characterName.style.color = "black";
+    character.style.backgroundColor = "white";
+    character.style.borderColor = "black";
+    document.body.style.backgroundColor = "white";
+    character.style.setProperty('--translate');
+    character.style.setProperty('--scale');
+    result.innerText = "[d]: default";
+  }  
 })
 
 
