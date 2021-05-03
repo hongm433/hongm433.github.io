@@ -1,0 +1,87 @@
+html {
+  text-align: center;
+  margin: auto;
+  font-family: "Fixedsys Excelsior 3.01"
+}
+
+/* content */
+#pressEnter {
+  font-size: 35px;
+  margin-top: 330px;
+}
+
+/* 1. start game */
+#line {
+  width: 100%;
+  height: 2px;
+  position: fixed;
+  top: 70%;
+  background-color: black;
+  display: none;
+  margin-left: -8px;
+  padding: 0;
+}
+  /* character */
+#character {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid black;
+  margin: auto;
+  display: none;
+  position: absolute;
+  background-color: white;
+  /* create animation keyframe */
+  animation-name: character;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+}
+
+/* (animation) */
+@keyframes character {
+  from {
+    height: 250px;
+    top: -270px;
+    left: 45%;
+  }
+  to {
+    height: 150px;
+    top: 53%;
+    left: 45%;
+  }
+}
+
+#charactername {
+  width: 156px;
+  text-align: center;
+  font-size: 27px;
+  position: absolute;
+  top: -75px;
+  left: -2px;
+}
+
+#l-eye {
+  width: 10px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 47px;
+  top: 50px;
+}
+
+#r-eye {
+  width: 10px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 94px;
+  top: 50px;
+}
+
+#result {
+  display: none;
+  font-size: 18px;
+}
+/* keyboard */
