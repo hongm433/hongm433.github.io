@@ -161,8 +161,8 @@ document.addEventListener("keydown", function(event){
     character.style.backgroundColor = "white";
     character.style.borderColor = "black";
     document.body.style.backgroundColor = "white";
-    character.style.setProperty('--translate');
-    character.style.setProperty('--scale');
+    character.style.setProperty('--translate', 0);
+    character.style.setProperty('--scale', 0);
     result.innerText = "[d]: default";
   }  
 })
