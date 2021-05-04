@@ -231,7 +231,7 @@ document.addEventListener("keydown", function(event){
   //     (j = )
   if (event.key == "j"){
 
-    result.innerText = "[j]:";
+    result.innerText = "[j]: Jennie's favorite";
   }
   //     (k = )
   if (event.key == "k"){
@@ -272,10 +272,10 @@ document.addEventListener("keydown", function(event){
     pet.style.display = "inline-flex";
     result.innerText = "[p]: pet generator";
   }     
-  //     (q = )
+  //     (q = question)
   if (event.key == "q"){
 
-    result.innerText = "[q]:";
+    result.innerText = "[q]: question";
   }     
   //      (r = rotate the character )
   if (event.key === 'r') {
