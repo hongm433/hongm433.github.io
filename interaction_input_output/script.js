@@ -246,7 +246,7 @@ document.addEventListener("keydown", function(event){
     line.style.backgroundColor = generateRandomColor();
     result.innerText = "[l]: line color change";
   }
-  //     (m = )
+  //     (m = music on/off)
   if (event.key == "m"){
     if (mPressed) {
       // runs on the second time
@@ -265,10 +265,11 @@ document.addEventListener("keydown", function(event){
     characterName.innerText = generateName();
     result.innerText = "[n]: name change";
   }
-  //     (o = )
+  //     (o = outline color change)
   if (event.key == "o"){
-
-    result.innerText = "[o]:";
+    let strokeChange = characterInner.style.borderColor = generateRandomColor();
+    strokeChange;
+    result.innerText = "[o]: outline color change";
   }  
   //     (p = pet generator)
   if (event.key == "p"){
@@ -288,9 +289,8 @@ document.addEventListener("keydown", function(event){
   }  
   //      (s = stroke color change)
   if (event.key == "s"){
-    let strokeChange = characterInner.style.borderColor = generateRandomColor();
-    strokeChange;
-    result.innerText = "[s]: stroke color change";
+    characterInner.style.boxShadow = "2px";
+    result.innerText = "[s]: shadow generator";
   }
   //     (t = )
   if (event.key == "t"){
@@ -445,8 +445,8 @@ document.addEventListener("keydown", function(event){
     characterName.style.color = "black";
     characterName.style.fontFamily = "Fixedsys Excelsior 3.01";
     // character
-    character.style.backgroundColor = "white";
-    character.style.borderColor = "black";
+    characterInner.style.backgroundColor = "white";
+    characterInner.style.borderColor = "black";
     character.style.setProperty('--translate', 0);
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
