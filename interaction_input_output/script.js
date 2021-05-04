@@ -191,13 +191,13 @@ document.addEventListener("keydown", function(event){
   if (event.key == "f"){
     if (fPressed) {
       // runs on the second time f is pressed
-      characterName.style.fontFamily = "fixedsys excelsior 3.01";
-      result.innerText = "[f]: font family change";
+      characterName.style.fontFamily = "fixedsys";
+      result.innerText = "[f]: font change OFF";
       fPressed = false;
     } else {
       // runs on the first time f is pressed
       characterName.style.fontFamily = "futura";
-      result.innerText = "[f]: font family change";
+      result.innerText = "[f]: font change to <Futura>";
       fPressed = true;
     }
   };  

@@ -1,7 +1,12 @@
+@font-face {
+  src: url("font/fixedsys_excelsior.ttf");
+  font-family: "fixedsys"
+}
+
 html {
   text-align: center;
   margin: auto;
-  font-family: "Fixedsys Excelsior 3.01";
+  font-family: "fixedsys";
 }
 
 body {
