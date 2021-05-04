@@ -21,7 +21,7 @@ body {
 
 .title {
   /* create animation keyframe */
-  animation: title 2.2s linear 1 normal forwards;
+  animation: title 2.7s linear 1 normal forwards;
 }
 
 #heyCSS {
@@ -30,7 +30,7 @@ body {
   margin-bottom: 0;
 }
 #description {
-  font-size: 25px;
+  font-size: 23px;
   margin-top: 25px;
 }
 /* (animation) */
@@ -44,7 +44,7 @@ body {
   font-size: 35px;
   margin-top: -100px;
   /* create animation keyframe */
-  animation: pressEnter 4.5s linear 1 normal forwards;
+  animation: pressEnter 5.4s linear 1 normal forwards;
 }
 
 /* (animation) */
