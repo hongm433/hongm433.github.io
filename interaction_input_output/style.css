@@ -169,7 +169,49 @@ body {
   display: none;
 }
 
-/*** pet */
+/* [a] animation infinite loop */
+.animationA {
+  animation: animationA 1s infinite;
+}
+@keyframes animationA {
+  0% {left: -200%;}
+  50% {left: 200%;}
+  100% {left: -200%;}
+}
+
+/* [c] cursor */
+#cursor {
+  display: none;
+}
+
+/* [h] hands */
+.handLeft {
+  width: 30px;
+  height: 3px;
+  transform: rotate(-20deg);
+  position: absolute;
+  top: 90px;
+  left: -28px;
+  background-color: black;
+  display: none;
+}
+.handRight {
+  width: 30px;
+  height: 3px;
+  transform: rotate(20deg);
+  position: absolute;
+  top: 90px;
+  right: -28px;
+  background-color: black;
+  display: none;
+}
+
+/* [m] audio */
+#bgm {
+  display: none;
+}
+
+/* [p] pet */
 .pet {
   width: 30px;
   height: 30px;
@@ -235,16 +277,8 @@ body {
       transform: scale(1, 1);
   }
 }
-/* [a] animation infinite loop */
-.animationA {
-  animation: animationA 1s infinite;
-}
-@keyframes animationA {
-  0% {left: -200%;}
-  50% {left: 200%;}
-  100% {left: -200%;}
-}
-/* [j] jumping animation */
+
+/* [spacebar] jumping animation */
 @keyframes jump {
   0%  {
     transform: scale(1, 1) translateY(0);
@@ -272,12 +306,3 @@ body {
     animation: jump 0.5s cubic-bezier(0.280, 0.840, 0.420, 1);
 }
 
-/* audio */
-#bgm {
-  display: none;
-}
-
-/* cursor */
-#cursor {
-  display: none;
-}

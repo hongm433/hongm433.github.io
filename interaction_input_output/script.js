@@ -3,6 +3,7 @@ let aPressed = false;
 let cPressed = false;
 let ePressed = false;
 let fPressed = false;
+let hPressed = false;
 let mPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
@@ -24,6 +25,12 @@ var petEyeL = document.createElement("div");
 var petEyeR = document.createElement("div");
     petEyeR.classList.add("pet-righteye");
     document.querySelector(".pet").append(petEyeR);
+var handLeft = document.createElement("div");
+      handLeft.classList.add("handLeft");
+      document.querySelector(".character-inner").append(handLeft);
+var handRight = document.createElement("div");
+      handRight.classList.add("handRight");
+      document.querySelector(".character-inner").append(handRight);  
 let bgm = document.querySelector('#bgm');
 let inner = character.querySelector('.character-inner');
 let animationA = document.querySelector('.character-inner');
@@ -199,10 +206,20 @@ document.addEventListener("keydown", function(event){
 
     result.innerText = "[g]:";
   }
-  //     (h = )
+  //     (h = hand generator)
   if (event.key == "h"){
-
-    result.innerText = "[h]:";
+    if (hPressed) {
+      handLeft.style.display = "none";
+      handRight.style.display = "none";
+      result.innerText = "[h]: hands generator OFF";
+      hPressed = false;
+    } else {
+      // runs on the first time
+      handLeft.style.display = "inline-flex";
+      handRight.style.display = "inline-flex";
+      result.innerText = "[h]: hands generator ON";
+      hPressed = true;
+    }
   }  
   //     (i = inner color change)
   if (event.key == "i"){
@@ -268,7 +285,8 @@ document.addEventListener("keydown", function(event){
   }  
   //      (s = stroke color change)
   if (event.key == "s"){
-    characterInner.style.borderColor = generateRandomColor();
+    let strokeChange = characterInner.style.borderColor = generateRandomColor();
+    strokeChange;
     result.innerText = "[s]: stroke color change";
   }
   //     (t = )
@@ -420,6 +438,8 @@ document.addEventListener("keydown", function(event){
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
     characterInner.style.borderRadius = "50%";
+    handLeft.style.display = "none";
+    handRight.style.display = "none";
     // line
     line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
