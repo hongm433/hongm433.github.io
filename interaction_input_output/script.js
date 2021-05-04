@@ -419,6 +419,7 @@ document.addEventListener("keydown", function(event){
     character.style.setProperty('--translate', 0);
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
+    characterInner.style.borderRadius = "50%";
     // line
     line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
