@@ -5,6 +5,7 @@ let ePressed = false;
 let fPressed = false;
 let hPressed = false;
 let mPressed = false;
+let zPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
 let line = document.querySelector('#line');
@@ -233,7 +234,7 @@ document.addEventListener("keydown", function(event){
   //     (j = )
   if (event.key == "j"){
 
-    result.innerText = "[j]: Jennie's favorite";
+    result.innerText = "[j]: Jennie";
   }
   //     (k = )
   if (event.key == "k"){
@@ -321,10 +322,20 @@ document.addEventListener("keydown", function(event){
 
     result.innerText = "[y]:";
   }  
-  //     (z = )
+  //     (z = z-index)
   if (event.key == "z"){
-
-    result.innerText = "[z]:";
+    if (zPressed) {
+      character.style.zIndex = "999"
+      line.style.zIndex = "99"
+      result.innerText = "[z]: z-index forward";
+      zPressed = false;
+    } else {
+      // runs on the first time
+      character.style.zIndex = "98"
+      line.style.zIndex = "99"
+      result.innerText = "[z]: z-index backward";
+      zPressed = true;
+    }
   }        
   
   /* glyphs */
