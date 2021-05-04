@@ -1,5 +1,8 @@
 // define variables
+let aPressed = false;
+let cPressed = false;
 let fPressed = false;
+let mPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
 let line = document.querySelector('#line');
@@ -9,6 +12,7 @@ let character = document.querySelector('#character');
     character.style.setProperty('--translate', 0);
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
+let characterInner = document.querySelector('.character-inner')
 let characterName = document.querySelector('#charactername');
 var pet = document.createElement("div");
     pet.classList.add("pet");
@@ -19,7 +23,10 @@ var petEyeL = document.createElement("div");
 var petEyeR = document.createElement("div");
     petEyeR.classList.add("pet-righteye");
     document.querySelector(".pet").append(petEyeR);
-
+let bgm = document.querySelector('#bgm');
+let inner = character.querySelector('.character-inner');
+let animationA = document.querySelector('.character-inner');
+let myCursor = document.querySelector('#cursor');
 
 
 
@@ -119,20 +126,42 @@ document.addEventListener("keydown", function(event){
 
   //     (a = animation infinite loop)
   if (event.key == "a"){
-
-    result.innerText = "[a]: animation infinite loop";
+    if (aPressed) {
+      // runs on the second time f is pressed
+    animationA.classList.remove('animationA');
+    result.innerText = "[a]: animation infinite loop OFF";
+    aPressed = false;
+    } else {
+      // runs on the first time f is pressed
+    animationA.classList.add('animationA');
+    animationA.style.position = "absolute";
+    result.innerText = "[a]: animation infinite loop ON";
+    aPressed = true;
+    }
   }     
   //     (b = background change)
   if (event.key == "b"){
     document.body.style.backgroundColor = generateRandomColor();
     result.innerText = "[b]: background color change";
   }
-  //      (c = character color change)
+  //      (c = cursor change)
   if (event.key == "c"){
-    let characterColorChange = character.style.backgroundColor = generateRandomColor();
-    characterColorChange;
-    characterName.style.color = characterColorChange;
-    result.innerText = "[c]: character and name colors change";
+    if (cPressed) {
+      // runs on the second time f is pressed
+    myCursor.style.display = "none";
+    result.innerText = "[c]: cursor change OFF";
+    cPressed = false;
+    } else {
+      // runs on the first time f is pressed
+    myCursor.style.display = "inline-flex";
+    myCursor.style.position = "absolute";
+    window.addEventListener("mousemove", function(event){
+    myCursor.style.top = (event.pageY + 20) + "px";
+    myCursor.style.left = (event.pageX + 20)+ "px";
+    });
+    result.innerText = "[c]: cursor change ON";
+    cPressed = true;
+    }
   }
   // d = default (see the last row)
   //     (e = )
@@ -162,10 +191,12 @@ document.addEventListener("keydown", function(event){
 
     result.innerText = "[h]:";
   }  
-  //     (i = )
+  //     (i = inner color change)
   if (event.key == "i"){
-
-    result.innerText = "[i]:";
+    let characterColorChange = characterInner.style.backgroundColor = generateRandomColor();
+    characterColorChange;
+    characterName.style.color = characterColorChange;
+    result.innerText = "[i]: inner & name colors change";
   }  
   //     (j = )
   if (event.key == "j"){
@@ -184,8 +215,17 @@ document.addEventListener("keydown", function(event){
   }
   //     (m = )
   if (event.key == "m"){
-
-    result.innerText = "[m]:";
+    if (mPressed) {
+      // runs on the second time
+      bgm.pause();
+      mPressed = false;
+      result.innerText = "[m]: music OFF";
+    } else {
+      // runs on the first time
+      bgm.play();
+      mPressed = true;
+      result.innerText = "[m]: music ON";
+    }
   }    
   //      (n = name change)
   if (event.key == "n"){
@@ -215,7 +255,7 @@ document.addEventListener("keydown", function(event){
   }  
   //      (s = stroke color change)
   if (event.key == "s"){
-    character.style.borderColor = generateRandomColor();
+    characterInner.style.borderColor = generateRandomColor();
     result.innerText = "[s]: stroke color change";
   }
   //     (t = )
@@ -344,7 +384,6 @@ document.addEventListener("keydown", function(event){
 
   //      (spacebar = jump)
   if (event.code === 'Space') {
-    const inner = character.querySelector('.character-inner');
     inner.classList.add('jumping');
     inner.addEventListener('animationend', () => {
       inner.classList.remove('jumping');
@@ -371,7 +410,12 @@ document.addEventListener("keydown", function(event){
     line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
     line.style.setProperty('--translate', 0);
-
+    // others
+    animationA.classList.remove('animationA');
+    bgm.pause();
+    inner.classList.remove('jumping');
+    myCursor.style.display = "none";
+    // result
     result.innerText = "[d]: default";
     
   }  
