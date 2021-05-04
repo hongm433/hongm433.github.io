@@ -5,6 +5,7 @@ let ePressed = false;
 let fPressed = false;
 let hPressed = false;
 let mPressed = false;
+let sPressed = false;
 let zPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
@@ -289,8 +290,16 @@ document.addEventListener("keydown", function(event){
   }  
   //      (s = stroke color change)
   if (event.key == "s"){
-    characterInner.style.boxShadow = "2px";
-    result.innerText = "[s]: shadow generator";
+    if (sPressed) {
+      characterInner.style["boxShadow"] = "none";
+      result.innerText = "[s]: shadow generator OFF";
+      sPressed = false;
+    } else {
+      // runs on the first time
+      characterInner.style["boxShadow"] = "5px 5px 5px #121212";
+      result.innerText = "[s]: shadow generator ON";
+      sPressed = true;
+    }  
   }
   //     (t = )
   if (event.key == "t"){
@@ -451,6 +460,7 @@ document.addEventListener("keydown", function(event){
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
     characterInner.style.borderRadius = "50%";
+    characterInner.style["boxShadow"] = "none";
     handLeft.style.display = "none";
     handRight.style.display = "none";
     // line
