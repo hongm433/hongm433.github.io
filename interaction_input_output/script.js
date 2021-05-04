@@ -1,5 +1,5 @@
 // define variables
-
+let fPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
 let line = document.querySelector('#line');
@@ -55,6 +55,8 @@ document.addEventListener("keydown", function(event){
     line.style.display = "block";
     character.style.display = "inline-flex";
     result.style.display = "block";
+    document.querySelector('.title').style.display = "none";
+    document.body.style.backgroundColor = "white";
   }
   //      (` = opacity 0%)
   if (event.key == "`"){
@@ -115,38 +117,41 @@ document.addEventListener("keydown", function(event){
 
   /* alphabet */
 
-  //     (a = )
+  //     (a = animation infinite loop)
   if (event.key == "a"){
 
-    result.innerText = "[a]:";
+    result.innerText = "[a]: animation infinite loop";
   }     
   //     (b = background change)
   if (event.key == "b"){
     document.body.style.backgroundColor = generateRandomColor();
-    result.innerText = "[b]: background change";
+    result.innerText = "[b]: background color change";
   }
   //      (c = character color change)
   if (event.key == "c"){
     let characterColorChange = character.style.backgroundColor = generateRandomColor();
     characterColorChange;
     characterName.style.color = characterColorChange;
-    result.innerText = "[c]: character and name color change";
+    result.innerText = "[c]: character and name colors change";
   }
-  //     (d = )
-  if (event.key == "d"){
-
-    result.innerText = "[d]:";
-  }  
+  // d = default (see the last row)
   //     (e = )
   if (event.key == "e"){
 
     result.innerText = "[e]:";
   }  
-  //     (f = )
+  //     (f = font change)
   if (event.key == "f"){
-
-    result.innerText = "[f]:";
-  }  
+    if (fPressed) {
+      // runs on the second time f is pressed
+      characterName.style.fontFamily = "helvetica,sans-serif";
+      fPressed = false;
+    } else {
+      // runs on the first time f is pressed
+      characterName.style.fontFamily = "futura";
+      fPressed = true;
+    }
+  };  
   //     (g = )
   if (event.key == "g"){
 
@@ -337,20 +342,36 @@ document.addEventListener("keydown", function(event){
     result.innerText = "[Backspace]: turn on/off the light";
   }
 
+  //      (spacebar = jump)
+  if (event.code === 'Space') {
+    const inner = character.querySelector('.character-inner');
+    inner.classList.add('jumping');
+    inner.addEventListener('animationend', () => {
+      inner.classList.remove('jumping');
+    }, { once: true });
+    result.innerText = "[Spacebar]: jumping";
+  }
+
 
   //      (d = default)
   if (event.key == "d"){
+    // html
+    document.body.style.backgroundColor = "white";
+    // character name
     characterName.innerText = "Jennie";
-    line.style.backgroundColor = "black";
     characterName.style.color = "black";
+    characterName.style.fontFamily = "Fixedsys Excelsior 3.01";
+    // character
     character.style.backgroundColor = "white";
     character.style.borderColor = "black";
-    document.body.style.backgroundColor = "white";
     character.style.setProperty('--translate', 0);
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);
+    // line
+    line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
     line.style.setProperty('--translate', 0);
+
     result.innerText = "[d]: default";
     
   }  
