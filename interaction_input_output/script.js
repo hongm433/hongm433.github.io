@@ -158,6 +158,7 @@ document.addEventListener("keydown", function(event){
       // runs on the second time
     myCursor.style.display = "none";
     result.innerText = "[c]: cursor change OFF";
+    result.style.height = "30px";
     cPressed = false;
     } else {
       // runs on the first time
@@ -167,7 +168,8 @@ document.addEventListener("keydown", function(event){
     myCursor.style.top = (event.pageY + 20) + "px";
     myCursor.style.left = (event.pageX + 20)+ "px";
     });
-    result.innerText = "[c]: cursor change ON";
+    result.style.height = "57px";
+    result.innerText = "[c]: cursor change ON\n* Move your mouse *";
     cPressed = true;
     }
   }
