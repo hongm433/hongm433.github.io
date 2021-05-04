@@ -61,7 +61,8 @@ body {
   margin-right: auto;
   margin-top: 20px;
   background-color: white;
-  padding: 10px 0 3px 0;
+  padding: 7px 0 3px 0;
+  line-height: 1.4em;
 }
 
 #line {
@@ -192,8 +193,8 @@ body {
   }
   to {
     height: 30px;
-    top: -18%;
-    left: 100%;
+    top: -25%;
+    left: 101%;
   }
 }
 .pet-lefteye {

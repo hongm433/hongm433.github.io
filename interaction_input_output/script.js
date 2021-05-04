@@ -1,6 +1,7 @@
 // define variables
 let aPressed = false;
 let cPressed = false;
+let ePressed = false;
 let fPressed = false;
 let mPressed = false;
 let result = document.querySelector('#result');
@@ -147,12 +148,12 @@ document.addEventListener("keydown", function(event){
   //      (c = cursor change)
   if (event.key == "c"){
     if (cPressed) {
-      // runs on the second time f is pressed
+      // runs on the second time
     myCursor.style.display = "none";
     result.innerText = "[c]: cursor change OFF";
     cPressed = false;
     } else {
-      // runs on the first time f is pressed
+      // runs on the first time
     myCursor.style.display = "inline-flex";
     myCursor.style.position = "absolute";
     window.addEventListener("mousemove", function(event){
@@ -164,20 +165,32 @@ document.addEventListener("keydown", function(event){
     }
   }
   // d = default (see the last row)
-  //     (e = )
+  //     (e = edge change)
   if (event.key == "e"){
-
-    result.innerText = "[e]:";
+    
+    if (ePressed) {
+      // runs on the second time
+    characterInner.style.borderRadius = "50%";
+    result.innerText = "[e]: edge change";
+    ePressed = false;
+    } else {
+      // runs on the first time
+    characterInner.style.borderRadius = "0%";
+    result.innerText = "[e]: edge change";
+    ePressed = true;
+    }
   }  
   //     (f = font change)
   if (event.key == "f"){
     if (fPressed) {
       // runs on the second time f is pressed
       characterName.style.fontFamily = "fixedsys excelsior 3.01";
+      result.innerText = "[f]: font family change";
       fPressed = false;
     } else {
       // runs on the first time f is pressed
       characterName.style.fontFamily = "futura";
+      result.innerText = "[f]: font family change";
       fPressed = true;
     }
   };  
@@ -196,7 +209,7 @@ document.addEventListener("keydown", function(event){
     let characterColorChange = characterInner.style.backgroundColor = generateRandomColor();
     characterColorChange;
     characterName.style.color = characterColorChange;
-    result.innerText = "[i]: inner & name colors change";
+    result.innerText = "[i]: inner colors change";
   }  
   //     (j = )
   if (event.key == "j"){
