@@ -5,6 +5,7 @@ let ePressed = false;
 let fPressed = false;
 let hPressed = false;
 let mPressed = false;
+let pPressed = false;
 let sPressed = false;
 let zPressed = false;
 let result = document.querySelector('#result');
@@ -274,8 +275,16 @@ document.addEventListener("keydown", function(event){
   }  
   //     (p = pet generator)
   if (event.key == "p"){
-    pet.style.display = "inline-flex";
-    result.innerText = "[p]: pet generator";
+    if (pPressed) {
+      pet.style.display = "none";
+      result.innerText = "[p]: pet generator OFF";
+      pPressed = false;
+    } else {
+      // runs on the first time
+      pet.style.display = "inline-flex";
+      result.innerText = "[p]: pet generator ON";
+      pPressed = true;
+    }
   }     
   //     (q = question)
   if (event.key == "q"){
@@ -296,7 +305,7 @@ document.addEventListener("keydown", function(event){
       sPressed = false;
     } else {
       // runs on the first time
-      characterInner.style["boxShadow"] = "5px 5px 5px #121212";
+      characterInner.style["boxShadow"] = "18px 11px 15px #121212";
       result.innerText = "[s]: shadow generator ON";
       sPressed = true;
     }  
@@ -463,6 +472,8 @@ document.addEventListener("keydown", function(event){
     characterInner.style["boxShadow"] = "none";
     handLeft.style.display = "none";
     handRight.style.display = "none";
+    // pet
+    pet.style.display = "none";
     // line
     line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
