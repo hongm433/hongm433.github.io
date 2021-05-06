@@ -591,6 +591,7 @@ document.addEventListener("keydown", function(event){
   //      (backspace = default)
   if (event.key == "Backspace"){
     // html
+    jennieG.style.display = "none";
     keyboardPad.style.outline = "none";
     document.body.style.backgroundColor = "#FFD76B";
     gridContainer.style.display = "none";
