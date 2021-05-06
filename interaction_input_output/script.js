@@ -624,7 +624,6 @@ document.addEventListener("keydown", function(event){
     animationA.classList.remove('animationA');
     bgm.pause();
     inner.classList.remove('jumping');
-    myCursor.style.display = "none";
     // result
     result.innerText = "[Backspace]: default";
     result.style.height = "30px";
