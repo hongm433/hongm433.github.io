@@ -239,14 +239,14 @@ document.addEventListener("keydown", function(event){
     characterInner.style.borderRadius = "50%";
     handLeft.style.left = "-28px";
     handRight.style.right = "-33px";
-    result.innerText = "[e]: edge change";
+    result.innerText = "[e]: edge change OFF";
     ePressed = false;
     } else {
       // runs on the first time
     characterInner.style.borderRadius = "0%";
     handLeft.style.left = "-28px";
     handRight.style.right = "-35px";
-    result.innerText = "[e]: edge change";
+    result.innerText = "[e]: edge change ON";
     ePressed = true;
     document.querySelector(".e").classList.remove("available");
     document.querySelector(".e").classList.add("selected");
@@ -470,13 +470,13 @@ document.addEventListener("keydown", function(event){
   if (event.key == "w"){
     if (wPressed) {
       character.style.width = "150px";
-      result.innerText = "[w]: width change";
+      result.innerText = "[w]: width change OFF";
       wPressed = false;
     } else {
       // runs on the first time
       character.style.width = "250px";
       character.style.textAlign = "center";
-      result.innerText = "[w]: width change";
+      result.innerText = "[w]: width change ON";
       wPressed = true;
       document.querySelector(".w").classList.remove("available");
       document.querySelector(".w").classList.add("selected");
