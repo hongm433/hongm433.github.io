@@ -426,14 +426,7 @@ document.addEventListener("keydown", function(event){
       document.querySelector(".p").classList.remove("available");
       document.querySelector(".p").classList.add("selected");
     }
-  }     
-  //     (q = question)
-  if (event.key == "q"){
-
-    result.innerText = "[q]: question";
-    document.querySelector(".q").classList.remove("available");
-    document.querySelector(".q").classList.add("selected");
-  }     
+  }      
   //      (r = rotate the character )
   if (event.key === 'r') {
     const rotate = Number(character.style.getPropertyValue('--rotate'));
@@ -472,21 +465,7 @@ document.addEventListener("keydown", function(event){
     }  
     document.querySelector(".t").classList.remove("available");
     document.querySelector(".t").classList.add("selected");
-  }  
-  //     (u = )
-  if (event.key == "u"){
-
-    result.innerText = "[u]:";
-    document.querySelector(".u").classList.remove("available");
-    document.querySelector(".u").classList.add("selected");
-  }  
-  //     (v = )
-  if (event.key == "v"){
-
-    result.innerText = "[v]:";
-    document.querySelector(".v").classList.remove("available");
-    document.querySelector(".v").classList.add("selected");
-  }   
+  } 
   //     (w = width change)
   if (event.key == "w"){
     if (wPressed) {
@@ -502,20 +481,6 @@ document.addEventListener("keydown", function(event){
       document.querySelector(".w").classList.remove("available");
       document.querySelector(".w").classList.add("selected");
     }
-  }  
-  //     (x = )
-  if (event.key == "x"){
-
-    result.innerText = "[x]:";
-    document.querySelector(".x").classList.remove("available");
-    document.querySelector(".x").classList.add("selected");
-  }  
-  //     (y = )
-  if (event.key == "y"){
-
-    result.innerText = "[y]:";
-    document.querySelector(".y").classList.remove("available");
-    document.querySelector(".y").classList.add("selected");
   }  
   //     (z = z-index)
   if (event.key == "z"){
