@@ -9,20 +9,113 @@
 </head>
 <body>
   <!-- Before starting game --> 
-  <div class="preStart">
     <div class="title">
       <h1 id="heyCSS">Hey-CSS!</h1>
-      <p id="description">Experience CSS & Style your website</p>
+      <div id="invisible">This website is for CSS beginners!</div>
+      <p id="result">Press any key multiple times to experience CSS and style your website</p>
+
+      <div class="keyboard-pad">
+        <div class="rowOne">
+          <div class="beforeOne mainbutton available">&#126;<br>&#96;</div>
+          <div class="one mainbutton available">&#33;<br>1</div>
+          <div class="two mainbutton available">&#64;<br>2</div>
+          <div class="three mainbutton available">&#35;<br>3</div>
+          <div class="four mainbutton available">&#36;<br>4</div>
+          <div class="five mainbutton available">&#37;<br>5</div>
+          <div class="six mainbutton available">&#94;<br>6</div>
+          <div class="seven mainbutton available">&#38;<br>7</div>
+          <div class="eight mainbutton available">&#42;<br>8</div>
+          <div class="nine mainbutton available">&#40;<br>9</div>
+          <div class="zero mainbutton available">&#41;<br>0</div>
+          <div class="dash mainbutton available">&#45;<br>&#94;</div>
+          <div class="plus mainbutton available">&#43;<br>&#94;</div>
+          <div class="backspace available"><br>delete</div>
+        </div>
+        <div class="rowTwo">
+          <div class="tab noFunction"><br>tab</div>
+          <div class="q mainbutton available"><br>Q</div>
+          <div class="w mainbutton available"><br>W</div>
+          <div class="e mainbutton available"><br>E</div>
+          <div class="r mainbutton available"><br>R</div>
+          <div class="t mainbutton available"><br>T</div>
+          <div class="y mainbutton available"><br>Y</div>
+          <div class="u mainbutton available"><br>U</div>
+          <div class="i mainbutton available"><br>I</div>
+          <div class="o mainbutton available"><br>O</div>
+          <div class="p mainbutton available"><br>P</div>
+          <div class="mainbutton noFunction">&#123;<br>&#91;</div>
+          <div class="mainbutton noFunction">&#125;<br>&#93;</div>
+          <div class="mainbutton noFunction">&#124;<br>&#92;</div>
+        </div>
+        <div class="rowThree">
+          <div class="capslock noFunction"><br>caps lock</div>
+          <div class="a mainbutton available"><br>A</div>
+          <div class="s mainbutton available"><br>S</div>
+          <div class="d mainbutton available"><br>D</div>
+          <div class="f mainbutton available"><br>F</div>
+          <div class="g mainbutton available"><br>G</div>
+          <div class="h mainbutton available"><br>H</div>
+          <div class="j mainbutton available"><br>J</div>
+          <div class="k mainbutton available"><br>K</div>
+          <div class="l mainbutton available"><br>L</div>
+          <div class="mainbutton noFunction">&#58;<br>&#59;</div>
+          <div class="mainbutton noFunction">&#34;<br>&#39;</div>
+          <div class="enter available"><br>return</div>
+        </div>
+        <div class="rowFour">
+          <div class="shiftL noFunction"><br>shift</div>
+          <div class="z mainbutton available"><br>Z</div>
+          <div class="x mainbutton available"><br>X</div>
+          <div class="c mainbutton available"><br>C</div>
+          <div class="v mainbutton available"><br>V</div>
+          <div class="b mainbutton available"><br>B</div>
+          <div class="n mainbutton available"><br>N</div>
+          <div class="m mainbutton available"><br>M</div>
+          <div class="mainbutton noFunction">&#60;<br>&#44;</div>
+          <div class="mainbutton noFunction">&#62;<br>&#46;</div>
+          <div class="mainbutton noFunction">&#63;<br>&#47;</div>
+          <div class="shiftR noFunction"><br>shift</div>
+        </div>
+        <div class="rowFive">
+          <div class="fn noFunction mainbutton"><br>fn</div>
+          <div class="ctrl noFunction"><br>ctrl</div>
+          <div class="optionL noFunction mainbutton"><br>opt</div>
+          <div class="commandL noFunction"><br>command</div>
+          <div class="spacebar available"><br><br></div>
+          <div class="commandR noFunction"><br>command</div>
+          <div class="optionR noFunction mainbutton"><br>opt</div>
+          <div id="arrows">
+            <div class="arrowL available"><br>&#5130;</div>
+            <div id="arrowUD">
+              <div class="arrowU available">&#5123;</div>
+              <div class="arrowD available">&#5121;</div>
+            </div>
+            <div class="arrowR available"><br>&#5125;</div>
+          </div>
+        </div>
+      </div>
+      <div class="directions">
+        <div class="direction-container">
+          <div class="available direction"></div>
+          <p class="direction-ex">Available</p>
+        </div>
+        <div class="direction-container">
+          <div class="selected direction"></div>
+          <p class="direction-ex">Selected</p>
+        </div>
+        <div class="direction-container">
+          <div class="noFunction direction"></div>
+          <p class="direction-ex">Unavailable</p>
+        </div>
+      </div>
     </div>
-    <h1 id="pressEnter">Press "Enter" to start</h1>
-  </div>
 
   <!-- 1. start game -->
   <div id="line"></div>
 
   <div id="character">
     <div class="character-inner">
-      <p id="charactername">Jennie</p>
+      <p id="charactername">CSS</p>
       <div id="l-eye"></div>
       <div id="r-eye"></div>
       <div id="smile"></div>
@@ -33,6 +126,6 @@
   </div>
   <img id="cursor" src="cursor.cur">
   <audio id="bgm" src="bgm.mp3"></audio>
-  <p id="result">Press any key multiple times to experience CSS & animation<br>* Make sure to turn off [caps lock] *</p>
+
 </body>
 </html>

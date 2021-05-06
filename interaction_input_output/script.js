@@ -3,11 +3,13 @@ let aPressed = false;
 let cPressed = false;
 let ePressed = false;
 let fPressed = false;
+let gPressed = false;
 let hPressed = false;
 let mPressed = false;
 let pPressed = false;
-let sPressed = false;
+let tPressed = false;
 let zPressed = false;
+let capsPressed = false;
 let result = document.querySelector('#result');
 let enterStart = document.querySelector('#pressEnter');
 let line = document.querySelector('#line');
@@ -37,7 +39,8 @@ var handRight = document.createElement("div");
 let bgm = document.querySelector('#bgm');
 let inner = character.querySelector('.character-inner');
 let animationA = document.querySelector('.character-inner');
-let myCursor = document.querySelector('#cursor');
+var gridGenerator = document.createElement("div");
+      gridGenerator.classList.add("grid-generator");
 
 
 
@@ -67,69 +70,104 @@ document.addEventListener("keydown", function(event){
   console.log(event);
   console.log("what did we just press: ");
   console.log(event.key);
-  //    (enter = start)
-  if (event.key == "Enter"){
-    enterStart.style.display = "none";
-    line.style.display = "block";
-    character.style.display = "inline-flex";
-    result.style.display = "block";
-    document.querySelector('.title').style.display = "none";
-    document.body.style.backgroundColor = "white";
-  }
   //      (` = opacity 0%)
   if (event.key == "`"){
-    document.body.style.opacity = "0%";
+    character.style.opacity = "0%";
+    line.style.opacity = "0%";
+    pet.style.opacity = "0%";
     result.innerText = "[`]: opacity 0%";
+    document.querySelector(".beforeOne").classList.remove("available");
+    document.querySelector(".beforeOne").classList.add("selected");
   }    
   //      (1 = opacity 10%)
   if (event.key == "1"){
-    document.body.style.opacity = "10%";
+    character.style.opacity = "10%";
+    line.style.opacity = "10%";
+    pet.style.opacity = "10%";
     result.innerText = "[1]: opacity 10%";
+    document.querySelector(".one").classList.remove("available");
+    document.querySelector(".one").classList.add("selected");
   }  
   //      (2 = opacity 20%)
   if (event.key == "2"){
-    document.body.style.opacity = "20%";
+    character.style.opacity = "20%";
+    line.style.opacity = "20%";
+    pet.style.opacity = "20%";
     result.innerText = "[2]: opacity 20%";
+    document.querySelector(".two").classList.remove("available");
+    document.querySelector(".two").classList.add("selected");
   }  
   //      (3 = opacity 30%)
   if (event.key == "3"){
-    document.body.style.opacity = "30%";
+    character.style.opacity = "30%";
+    line.style.opacity = "30%";
+    pet.style.opacity = "30%";
     result.innerText = "[3]: opacity 30%";
+    document.querySelector(".three").classList.remove("available");
+    document.querySelector(".three").classList.add("selected");
   }  
   //      (4 = opacity 40%)
   if (event.key == "4"){
-    document.body.style.opacity = "40%";
+    character.style.opacity = "40%";
+    line.style.opacity = "40%";
+    pet.style.opacity = "40%";
     result.innerText = "[4]: opacity 40%";
+    document.querySelector(".four").classList.remove("available");
+    document.querySelector(".four").classList.add("selected");
   }  
   //      (5 = opacity 50%)
   if (event.key == "5"){
-    document.body.style.opacity = "50%";
+    character.style.opacity = "50%";
+    line.style.opacity = "50%";
+    pet.style.opacity = "50%";
     result.innerText = "[5]: opacity 50%";
+    document.querySelector(".five").classList.remove("available");
+    document.querySelector(".five").classList.add("selected");
   }      
   //      (6 = opacity 60%)
   if (event.key == "6"){
-    document.body.style.opacity = "60%";
+    character.style.opacity = "60%";
+    line.style.opacity = "60%";
+    pet.style.opacity = "60%";
     result.innerText = "[6]: opacity 60%";
+    document.querySelector(".six").classList.remove("available");
+    document.querySelector(".six").classList.add("selected");
   }  
   //      (7 = opacity 70%)
   if (event.key == "7"){
-    document.body.style.opacity = "70%";
+    character.style.opacity = "70%";
+    line.style.opacity = "70%";
+    pet.style.opacity = "70%";
     result.innerText = "[7]: opacity 70%";
+    document.querySelector(".seven").classList.remove("available");
+    document.querySelector(".seven").classList.add("selected");
   }  
   //      (8 = opacity 80%)
   if (event.key == "8"){
-    document.body.style.opacity = "80%";
+    character.style.opacity = "80%";
+    line.style.opacity = "80%";
+    pet.style.opacity = "80%";
     result.innerText = "[8]: opacity 80%";
+    document.querySelector(".eight").classList.remove("available");
+    document.querySelector(".eight").classList.add("selected");
   }  
   //      (9 = opacity 90%)
   if (event.key == "9"){
-    document.body.style.opacity = "90%";
+    character.style.opacity = "90%";
+    line.style.opacity = "90%";
+    pet.style.opacity = "90%";
     result.innerText = "[9]: opacity 90%";
+    document.querySelector(".nine").classList.remove("available");
+    document.querySelector(".nine").classList.add("selected");
   }  
   //      (0 = opacity 100%)
   if (event.key == "0"){
-    document.body.style.opacity = "100%";
+    character.style.opacity = "100%";
+    line.style.opacity = "100%";
+    pet.style.opacity = "100%";
     result.innerText = "[0]: opacity 100%";
+    document.querySelector(".zero").classList.remove("available");
+    document.querySelector(".zero").classList.add("selected");
   }   
 
 
@@ -148,48 +186,62 @@ document.addEventListener("keydown", function(event){
     animationA.style.position = "absolute";
     result.innerText = "[a]: animation infinite loop ON";
     aPressed = true;
+    document.querySelector(".a").classList.remove("available");
+    document.querySelector(".a").classList.add("selected");
     }
   }     
   //     (b = background change)
   if (event.key == "b"){
     document.body.style.backgroundColor = generateRandomColor();
     result.innerText = "[b]: background color change";
+    document.querySelector(".b").classList.remove("available");
+    document.querySelector(".b").classList.add("selected");
   }
-  //      (c = cursor change)
+  //      (c = color change)
   if (event.key == "c"){
-    if (cPressed) {
+    let characterColorChange = characterInner.style.backgroundColor = generateRandomColor();
+    characterColorChange;
+    characterName.style.color = characterColorChange;
+    result.innerText = "[c]: color change";
+    document.querySelector(".c").classList.remove("available");
+    document.querySelector(".c").classList.add("selected");
+    }
+
+  // d = drop shapdw
+  if (event.key == "d"){
+    if (ePressed) {
       // runs on the second time
-    myCursor.style.display = "none";
-    result.innerText = "[c]: cursor change OFF";
-    result.style.height = "30px";
-    cPressed = false;
+    characterInner.style["boxShadow"] = "none";
+    result.innerText = "[d]: drop shadow OFF";
+    ePressed = false;
     } else {
       // runs on the first time
-    myCursor.style.display = "inline-flex";
-    myCursor.style.position = "absolute";
-    window.addEventListener("mousemove", function(event){
-    myCursor.style.top = (event.pageY + 20) + "px";
-    myCursor.style.left = (event.pageX + 20)+ "px";
-    });
-    result.style.height = "57px";
-    result.innerText = "[c]: cursor change ON\n* Move your mouse *";
-    cPressed = true;
+    characterInner.style["boxShadow"] = "18px 11px 15px #121212";
+    result.innerText = "[d]: drop shadow ON";
+    ePressed = true;
+    document.querySelector(".d").classList.remove("available");
+    document.querySelector(".d").classList.add("selected");
     }
-  }
-  // d = default (see the last row)
+  }  
   //     (e = edge change)
   if (event.key == "e"){
     
     if (ePressed) {
       // runs on the second time
     characterInner.style.borderRadius = "50%";
+    handLeft.style.left = "-28px";
+    handRight.style.right = "-33px";
     result.innerText = "[e]: edge change";
     ePressed = false;
     } else {
       // runs on the first time
     characterInner.style.borderRadius = "0%";
+    handLeft.style.left = "-28px";
+    handRight.style.right = "-35px";
     result.innerText = "[e]: edge change";
     ePressed = true;
+    document.querySelector(".e").classList.remove("available");
+    document.querySelector(".e").classList.add("selected");
     }
   }  
   //     (f = font change)
@@ -204,12 +256,24 @@ document.addEventListener("keydown", function(event){
       characterName.style.fontFamily = "futura";
       result.innerText = "[f]: font change to <Futura>";
       fPressed = true;
+      document.querySelector(".f").classList.remove("available");
+      document.querySelector(".f").classList.add("selected");
     }
   };  
-  //     (g = )
+  //     (g = grid)
   if (event.key == "g"){
-
-    result.innerText = "[g]:";
+    if (gPressed) {
+      gridGenerator.style.display = "none";
+      result.innerText = "[g]: grid OFF";
+      gPressed = false;
+    } else {
+      // runs on the first time
+      gridGenerator.style.display = "grid";
+      result.innerText = "[g]: grid ON";
+      gPressed = true;
+      document.querySelector(".g").classList.remove("available");
+      document.querySelector(".g").classList.add("selected");
+    }
   }
   //     (h = hand generator)
   if (event.key == "h"){
@@ -224,29 +288,37 @@ document.addEventListener("keydown", function(event){
       handRight.style.display = "inline-flex";
       result.innerText = "[h]: hands generator ON";
       hPressed = true;
+      document.querySelector(".h").classList.remove("available");
+      document.querySelector(".h").classList.add("selected");
     }
   }  
-  //     (i = inner color change)
+  //     (i = )
   if (event.key == "i"){
-    let characterColorChange = characterInner.style.backgroundColor = generateRandomColor();
-    characterColorChange;
-    characterName.style.color = characterColorChange;
+    
     result.innerText = "[i]: inner colors change";
+    document.querySelector(".i").classList.remove("available");
+    document.querySelector(".i").classList.add("selected");
   }  
-  //     (j = )
+  //     (j = Jennie)
   if (event.key == "j"){
 
     result.innerText = "[j]: Jennie";
+    document.querySelector(".j").classList.remove("available");
+    document.querySelector(".j").classList.add("selected");
   }
   //     (k = )
   if (event.key == "k"){
 
     result.innerText = "[k]:";
+    document.querySelector(".k").classList.remove("available");
+    document.querySelector(".k").classList.add("selected");
   }       
   //      (l = line color change)
   if (event.key == "l"){
     line.style.backgroundColor = generateRandomColor();
     result.innerText = "[l]: line color change";
+    document.querySelector(".l").classList.remove("available");
+    document.querySelector(".l").classList.add("selected");
   }
   //     (m = music on/off)
   if (event.key == "m"){
@@ -260,18 +332,22 @@ document.addEventListener("keydown", function(event){
       bgm.play();
       mPressed = true;
       result.innerText = "[m]: music ON";
+      document.querySelector(".m").classList.remove("available");
+      document.querySelector(".m").classList.add("selected");
     }
   }    
   //      (n = name change)
   if (event.key == "n"){
     characterName.innerText = generateName();
     result.innerText = "[n]: name change";
+    document.querySelector(".n").classList.remove("available");
+    document.querySelector(".n").classList.add("selected");
   }
-  //     (o = outline color change)
+  //     (o = )
   if (event.key == "o"){
-    let strokeChange = characterInner.style.borderColor = generateRandomColor();
-    strokeChange;
-    result.innerText = "[o]: outline color change";
+    result.innerText = "[o]: ";
+    document.querySelector(".o").classList.remove("available");
+    document.querySelector(".o").classList.add("selected");
   }  
   //     (p = pet generator)
   if (event.key == "p"){
@@ -284,61 +360,90 @@ document.addEventListener("keydown", function(event){
       pet.style.display = "inline-flex";
       result.innerText = "[p]: pet generator ON";
       pPressed = true;
+      document.querySelector(".p").classList.remove("available");
+      document.querySelector(".p").classList.add("selected");
     }
   }     
   //     (q = question)
   if (event.key == "q"){
 
     result.innerText = "[q]: question";
+    document.querySelector(".q").classList.remove("available");
+    document.querySelector(".q").classList.add("selected");
   }     
   //      (r = rotate the character )
   if (event.key === 'r') {
     const rotate = Number(character.style.getPropertyValue('--rotate'));
     character.style.setProperty('--rotate', rotate + 45);
     result.innerText = "[r]: rotate the character";
+    document.querySelector(".r").classList.remove("available");
+    document.querySelector(".r").classList.add("selected");
   }  
   //      (s = stroke color change)
   if (event.key == "s"){
-    if (sPressed) {
-      characterInner.style["boxShadow"] = "none";
-      result.innerText = "[s]: shadow generator OFF";
-      sPressed = false;
+    let strokeChange = characterInner.style.borderColor = generateRandomColor();
+    strokeChange;
+    handLeft.style.backgroundColor = strokeChange;
+    handRight.style.backgroundColor = strokeChange;
+    result.innerText = "[s]: stroke color change";
+    document.querySelector(".s").classList.remove("available");
+    document.querySelector(".s").classList.add("selected");
+  }
+  //     (t = thickness change)
+  if (event.key == "t"){
+      if (tPressed) {
+      characterInner.style.borderWidth = "3px";
+      handLeft.style.height = "3px";
+      handRight.style.height = "3px";
+      handRight.style.right = "-33px";
+      result.innerText = "[t]: thickness-original";
+      tPressed = false;
     } else {
       // runs on the first time
-      characterInner.style["boxShadow"] = "18px 11px 15px #121212";
-      result.innerText = "[s]: shadow generator ON";
-      sPressed = true;
+      characterInner.style.borderWidth = "6px";
+      handLeft.style.height = "6px";
+      handRight.style.height = "6px";
+      handRight.style.right = "-37px";
+      result.innerText = "[t]: thickness-bold";
+      tPressed = true;
     }  
-  }
-  //     (t = )
-  if (event.key == "t"){
-
-    result.innerText = "[t]:";
+    document.querySelector(".t").classList.remove("available");
+    document.querySelector(".t").classList.add("selected");
   }  
   //     (u = )
   if (event.key == "u"){
 
     result.innerText = "[u]:";
+    document.querySelector(".u").classList.remove("available");
+    document.querySelector(".u").classList.add("selected");
   }  
   //     (v = )
   if (event.key == "v"){
 
     result.innerText = "[v]:";
+    document.querySelector(".v").classList.remove("available");
+    document.querySelector(".v").classList.add("selected");
   }   
   //     (w = )
   if (event.key == "w"){
 
     result.innerText = "[w]:";
+    document.querySelector(".w").classList.remove("available");
+    document.querySelector(".w").classList.add("selected");
   }  
   //     (x = )
   if (event.key == "x"){
 
     result.innerText = "[x]:";
+    document.querySelector(".x").classList.remove("available");
+    document.querySelector(".x").classList.add("selected");
   }  
   //     (y = )
   if (event.key == "y"){
 
     result.innerText = "[y]:";
+    document.querySelector(".y").classList.remove("available");
+    document.querySelector(".y").classList.add("selected");
   }  
   //     (z = z-index)
   if (event.key == "z"){
@@ -353,56 +458,30 @@ document.addEventListener("keydown", function(event){
       line.style.zIndex = "99"
       result.innerText = "[z]: z-index backward";
       zPressed = true;
+      document.querySelector(".z").classList.remove("available");
+      document.querySelector(".z").classList.add("selected");
     }
   }        
   
+
+
   /* glyphs */
-  //     (, = )
-  if (event.key == ","){
 
-    result.innerText = "[,]:";
-  }  
-  //     (. = )
-  if (event.key == "."){
-
-    result.innerText = "[.]:";
-  }
-  //     (/ = )
-  if (event.key == "/"){
-
-    result.innerText = "[/]:";
-  }  
-  //     (; = )
-  if (event.key == ";"){
-
-    result.innerText = "[;]:";
-  }
-  //     (' = )
-  if (event.key == "'"){
-
-    result.innerText = "[']:";
-  }  
-  //     ([ = )
-  if (event.key == "["){
-
-    result.innerText = "[[]:";
-  }  
-  //     (] = )
-  if (event.key == "]"){
-
-    result.innerText = "[]]:";
-  }             
   //      (- = scale down) 
   if (event.key === '-') {
     const scale = Number(character.style.getPropertyValue('--scale'));
     character.style.setProperty('--scale', Math.max(scale - 0.1, 0));
     result.innerText = "[-]: reduce size";
+    document.querySelector(".dash").classList.remove("available");
+    document.querySelector(".dash").classList.add("selected");
   }
   //      (=/+ = scale up)
   if (event.key === '=') {
     const scale = Number(character.style.getPropertyValue('--scale'));
     character.style.setProperty('--scale', scale + 0.1);
     result.innerText = "[+]: increase size";
+    document.querySelector(".plus").classList.remove("available");
+    document.querySelector(".plus").classList.add("selected");
   }
   //      (left arrow = move left)
   if (event.key === 'ArrowLeft') {
@@ -410,6 +489,8 @@ document.addEventListener("keydown", function(event){
     character.style.setProperty('--translate', translate - 5);
     pet.style.setProperty('--translate', 0);
     result.innerText = "[Left arrow]: move left";
+    document.querySelector(".arrowL").classList.remove("available");
+    document.querySelector(".arrowL").classList.add("selected");
   }
   //      (right arrow = move right)
   if (event.key === 'ArrowRight') {
@@ -417,6 +498,8 @@ document.addEventListener("keydown", function(event){
     character.style.setProperty('--translate', translate + 5);
     pet.style.setProperty('--translate', 0);
     result.innerText = "[Right arrow]: move right";
+    document.querySelector(".arrowR").classList.remove("available");
+    document.querySelector(".arrowR").classList.add("selected");
   }
   //      (up arrow = move backward)
   if (event.key === 'ArrowUp') {
@@ -426,7 +509,9 @@ document.addEventListener("keydown", function(event){
     line.style.setProperty('--scale', Math.max(scaleLine - 0.3, 1));
     line.style.setProperty('--translate', translateLine - 1);
     character.style.setProperty('--scale', Math.max(scale - 0.2, 0));
-    result.innerText = "[Down arrow]: move backward";
+    result.innerText = "[Up arrow]: move backward";
+    document.querySelector(".arrowU").classList.remove("available");
+    document.querySelector(".arrowU").classList.add("selected");
   }  
   //      (down arrow = move forward)
   if (event.key === 'ArrowDown') {
@@ -436,13 +521,10 @@ document.addEventListener("keydown", function(event){
     line.style.setProperty('--scale', scaleLine + 0.3);
     line.style.setProperty('--translate', translateLine + 1);
     character.style.setProperty('--scale', scale + 0.3);
-    result.innerText = "[Up arrow]: move forward";
+    result.innerText = "[Down arrow]: move forward";
+    document.querySelector(".arrowD").classList.remove("available");
+    document.querySelector(".arrowD").classList.add("selected");
   }  
-  //      (backspace = turn on/off light (toggle))
-  if (event.key === 'Backspace') {
-    document.body.classList.toggle("disappear");
-    result.innerText = "[Backspace]: turn on/off the light";
-  }
 
   //      (spacebar = jump)
   if (event.code === 'Space') {
@@ -451,15 +533,30 @@ document.addEventListener("keydown", function(event){
       inner.classList.remove('jumping');
     }, { once: true });
     result.innerText = "[Spacebar]: jumping";
+    document.querySelector(".spacebar").classList.remove("available");
+    document.querySelector(".spacebar").classList.add("selected");
   }
 
+  //      (enter = reset position)
+  if (event.code === 'Enter'){
+    result.innerText = "[Enter]: Reset position";
+    character.style.setProperty('--translate', 0);
+    document.querySelector(".enter").classList.remove("available");
+    document.querySelector(".enter").classList.add("selected");
+  }
 
-  //      (d = default)
-  if (event.key == "d"){
+  //      (capslock = alert)
+  if (event.code === 'CapsLock'){
+      document.querySelector(".capslock").style.backgroundColor = "red";
+      alert('You just turned on [Caps Lock]. Please turn it off to resume.');
+    } 
+
+  //      (backspace = default)
+  if (event.key == "Backspace"){
     // html
-    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundColor = "#FFD76B";
     // character name
-    characterName.innerText = "Jennie";
+    characterName.innerText = "CSS";
     characterName.style.color = "black";
     characterName.style.fontFamily = "Fixedsys Excelsior 3.01";
     // character
@@ -484,11 +581,19 @@ document.addEventListener("keydown", function(event){
     inner.classList.remove('jumping');
     myCursor.style.display = "none";
     // result
-    result.innerText = "[d]: default";
+    result.innerText = "[Backspace]: default";
+    result.style.height = "30px";
+    document.querySelector(".backspace").classList.remove("available");
+    document.querySelector(".backspace").classList.add("selected");
     
   }  
 })
 
+document.addEventListener("keyup", function(event){
+  if (event.code === 'CapsLock'){
+    document.querySelector(".capslock").style.backgroundColor = "rgb(0, 0, 0, 0.6)";
+  } 
+});
 
 
 
