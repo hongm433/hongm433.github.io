@@ -612,6 +612,10 @@ document.addEventListener("keydown", function(event){
     characterInner.style["boxShadow"] = "none";
     handLeft.style.display = "none";
     handRight.style.display = "none";
+    characterInner.style.borderWidth = "3px";
+      handLeft.style.height = "3px";
+      handRight.style.height = "3px";
+      handRight.style.right = "-33px";
     // pet
     pet.style.display = "none";
     // line
