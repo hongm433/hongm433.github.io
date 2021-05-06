@@ -7,6 +7,7 @@ let gPressed = false;
 let hPressed = false;
 let iPressed = false;
 let jPressed = false;
+let kPressed = false;
 let mPressed = false;
 let pPressed = false;
 let tPressed = false;
@@ -182,13 +183,14 @@ document.addEventListener("keydown", function(event){
     if (aPressed) {
       // runs on the second time f is pressed
     animationA.classList.remove('animationA');
-    result.innerText = "[a]: animation infinite loop OFF";
+    character.style.marginLeft = "0px";
+    result.innerText = "[a]: alignment-center";
     aPressed = false;
     } else {
       // runs on the first time f is pressed
     animationA.classList.add('animationA');
-    animationA.style.position = "absolute";
-    result.innerText = "[a]: animation infinite loop ON";
+    character.style.marginLeft = "-400px";
+    result.innerText = "[a]: alignment-left";
     aPressed = true;
     document.querySelector(".a").classList.remove("available");
     document.querySelector(".a").classList.add("selected");
@@ -348,12 +350,22 @@ document.addEventListener("keydown", function(event){
       document.querySelector(".j").classList.add("selected");
     }
   };
-  //     (k = )
+  //     (k = keyframe)
   if (event.key == "k"){
-
-    result.innerText = "[k]:";
+    if (kPressed) {
+      // runs on the second time f is pressed
+    animationA.classList.remove('animationA');
+    result.innerText = "[a]: keyframe infinite loop OFF";
+    kPressed = false;
+    } else {
+      // runs on the first time f is pressed
+    animationA.classList.add('animationA');
+    animationA.style.position = "absolute";
+    result.innerText = "[k]: keyframe infinite loop ON";
+    kPressed = true;
     document.querySelector(".k").classList.remove("available");
     document.querySelector(".k").classList.add("selected");
+    }
   }       
   //      (l = line color change)
   if (event.key == "l"){
@@ -609,6 +621,7 @@ document.addEventListener("keydown", function(event){
     gridContainer.style.display = "none";
     // character name
     characterName.innerText = "CSS";
+    character.style.marginLeft = "0px";
     characterName.style.color = "black";
     characterName.style.fontFamily = "Fixedsys Excelsior 3.01";
     // character
