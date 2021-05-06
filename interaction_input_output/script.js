@@ -5,9 +5,11 @@ let ePressed = false;
 let fPressed = false;
 let gPressed = false;
 let hPressed = false;
+let jPressed = false;
 let mPressed = false;
 let pPressed = false;
 let tPressed = false;
+let wPressed = false;
 let zPressed = false;
 let capsPressed = false;
 let result = document.querySelector('#result');
@@ -39,8 +41,9 @@ var handRight = document.createElement("div");
 let bgm = document.querySelector('#bgm');
 let inner = character.querySelector('.character-inner');
 let animationA = document.querySelector('.character-inner');
-var gridGenerator = document.createElement("div");
-      gridGenerator.classList.add("grid-generator");
+let jennieG = document.querySelector('.jennie');
+let jennieInfo = document.querySelector('.hoverjen');
+let gridContainer = document.querySelector('#grid-container');
 
 
 
@@ -263,15 +266,15 @@ document.addEventListener("keydown", function(event){
   //     (g = grid)
   if (event.key == "g"){
     if (gPressed) {
-      gridGenerator.style.display = "none";
+      gridContainer.style.display = "none";
       result.innerText = "[g]: grid OFF";
       gPressed = false;
     } else {
       // runs on the first time
-      gridGenerator.style.display = "grid";
-      result.innerText = "[g]: grid ON";
-      gPressed = true;
-      document.querySelector(".g").classList.remove("available");
+    gridContainer.style.display = "block";
+    result.innerText = "[g]: grid ON";
+    gPressed = true;
+    document.querySelector(".g").classList.remove("available");
       document.querySelector(".g").classList.add("selected");
     }
   }
@@ -295,17 +298,48 @@ document.addEventListener("keydown", function(event){
   //     (i = )
   if (event.key == "i"){
     
-    result.innerText = "[i]: inner colors change";
+    result.innerText = "[i]: ";
     document.querySelector(".i").classList.remove("available");
     document.querySelector(".i").classList.add("selected");
   }  
   //     (j = Jennie)
   if (event.key == "j"){
-
-    result.innerText = "[j]: Jennie";
-    document.querySelector(".j").classList.remove("available");
-    document.querySelector(".j").classList.add("selected");
-  }
+    if (jPressed) {
+      jennieG.style.display = "none";
+      result.innerText = "[j]: Jennie disappeared";
+      jPressed = false;
+    } else {
+      // runs on the first time
+      jennieG.style.display = "inline";
+      
+      jennieG.addEventListener("mouseover", function(event){
+        console.log(event);
+        console.log("Mouse over!");
+        jennieInfo.style.width = "300px";
+        jennieInfo.style.height = "100px";
+        jennieInfo.style.margin = "-120px 0 0 0";
+        jennieInfo.style.padding = "20px 20px 20px 20px";
+        jennieInfo.style.lineHeight = "1.2em";
+        jennieInfo.style.textAlign = "left";
+        jennieInfo.innerText = "English Name: Jennie\nKorean Name: Min Heong Hong\nInstagram: @minjenniehong\nE-mail: hongm433@newschool.edu";
+      });
+      jennieG.addEventListener("mouseleave", function(event){
+        console.log(event);
+        console.log("Mouse leave!");
+        jennieInfo.innerText = "hover me!"
+        jennieInfo.style.width = "140px";
+        jennieInfo.style.height = "30px";
+        jennieInfo.style.margin = "0 0 0 0";
+        jennieInfo.style.padding = "7px 0 0 0";
+        jennieInfo.style.lineHeight = "none";
+        jennieInfo.style.textAlign = "center";
+      });
+      result.innerText = "[j]: Jennie appeared";
+      jPressed = true;
+      document.querySelector(".j").classList.remove("available");
+      document.querySelector(".j").classList.add("selected");
+    }
+  };
   //     (k = )
   if (event.key == "k"){
 
@@ -424,12 +458,21 @@ document.addEventListener("keydown", function(event){
     document.querySelector(".v").classList.remove("available");
     document.querySelector(".v").classList.add("selected");
   }   
-  //     (w = )
+  //     (w = width change)
   if (event.key == "w"){
-
-    result.innerText = "[w]:";
-    document.querySelector(".w").classList.remove("available");
-    document.querySelector(".w").classList.add("selected");
+    if (wPressed) {
+      character.style.width = "150px";
+      result.innerText = "[w]: width change";
+      wPressed = false;
+    } else {
+      // runs on the first time
+      character.style.width = "250px";
+      character.style.textAlign = "center";
+      result.innerText = "[w]: width change";
+      wPressed = true;
+      document.querySelector(".w").classList.remove("available");
+      document.querySelector(".w").classList.add("selected");
+    }
   }  
   //     (x = )
   if (event.key == "x"){
@@ -555,6 +598,7 @@ document.addEventListener("keydown", function(event){
   if (event.key == "Backspace"){
     // html
     document.body.style.backgroundColor = "#FFD76B";
+    gridContainer.style.display = "none";
     // character name
     characterName.innerText = "CSS";
     characterName.style.color = "black";
@@ -587,14 +631,13 @@ document.addEventListener("keydown", function(event){
     document.querySelector(".backspace").classList.add("selected");
     
   }  
-})
+});
 
 document.addEventListener("keyup", function(event){
   if (event.code === 'CapsLock'){
     document.querySelector(".capslock").style.backgroundColor = "rgb(0, 0, 0, 0.6)";
   } 
 });
-
 
 
 
