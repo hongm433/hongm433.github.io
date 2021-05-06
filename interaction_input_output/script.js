@@ -5,6 +5,7 @@ let ePressed = false;
 let fPressed = false;
 let gPressed = false;
 let hPressed = false;
+let iPressed = false;
 let jPressed = false;
 let mPressed = false;
 let pPressed = false;
@@ -295,12 +296,19 @@ document.addEventListener("keydown", function(event){
       document.querySelector(".h").classList.add("selected");
     }
   }  
-  //     (i = )
+  //     (i = inner glow)
   if (event.key == "i"){
-    
-    result.innerText = "[i]: ";
+    if (iPressed) {
+      characterInner.style["boxShadow"] = "none";
+      result.innerText = "[i]: inner glow OFF";
+      iPressed = false;
+    } else {
+    characterInner.style["boxShadow"] = "inset 0 0 30px #FFD76B";
+    result.innerText = "[i]: inner glow ON";
+    iPressed = true;
     document.querySelector(".i").classList.remove("available");
     document.querySelector(".i").classList.add("selected");
+    }
   }  
   //     (j = Jennie)
   if (event.key == "j"){
@@ -605,6 +613,7 @@ document.addEventListener("keydown", function(event){
     characterName.style.fontFamily = "Fixedsys Excelsior 3.01";
     // character
     characterInner.style.backgroundColor = "white";
+    characterInner.style["boxShadow"] = "none";
     characterInner.style.borderColor = "black";
     character.style.width = "150px";
     character.style.setProperty('--translate', 0);
