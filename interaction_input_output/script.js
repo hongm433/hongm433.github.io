@@ -617,6 +617,8 @@ document.addEventListener("keydown", function(event){
     line.style.backgroundColor = "black";
     line.style.setProperty('--scale', 1);
     line.style.setProperty('--translate', 0);
+    character.style.zIndex = "999"
+      line.style.zIndex = "99"
     // others
     animationA.classList.remove('animationA');
     bgm.pause();
