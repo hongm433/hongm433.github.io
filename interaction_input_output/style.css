@@ -20,12 +20,6 @@ body {
   margin-bottom: 20px;
 }
 
-#invisible {
-  float: inherit;
-  display: none;
-  background-color: white;
-  border: 2px solid black;
-}
 
 #result {
   font-size: 18px;

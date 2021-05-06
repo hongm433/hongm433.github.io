@@ -10,6 +10,7 @@ let jPressed = false;
 let kPressed = false;
 let mPressed = false;
 let pPressed = false;
+let oPressed = false;
 let tPressed = false;
 let wPressed = false;
 let zPressed = false;
@@ -46,6 +47,7 @@ let animationA = document.querySelector('.character-inner');
 let jennieG = document.querySelector('.jennie');
 let jennieInfo = document.querySelector('.hoverjen');
 let gridContainer = document.querySelector('#grid-container');
+let keyboardPad = document.querySelector('.keyboard-pad');
 
 
 
@@ -397,12 +399,19 @@ document.addEventListener("keydown", function(event){
     document.querySelector(".n").classList.remove("available");
     document.querySelector(".n").classList.add("selected");
   }
-  //     (o = )
+  //     (o = outline )
   if (event.key == "o"){
-    result.innerText = "[o]: ";
+    if (oPressed) {
+      keyboardPad.style.outline = "none";
+      result.innerText = "[o]: outline OFF";
+      oPressed = false;
+    } else {
+    keyboardPad.style.outline = "dashed red";
+    result.innerText = "[o]: outline ON";
+    oPressed = true;
     document.querySelector(".o").classList.remove("available");
     document.querySelector(".o").classList.add("selected");
-  }  
+  }}  
   //     (p = pet generator)
   if (event.key == "p"){
     if (pPressed) {
@@ -617,6 +626,7 @@ document.addEventListener("keydown", function(event){
   //      (backspace = default)
   if (event.key == "Backspace"){
     // html
+    keyboardPad.style.outline = "none";
     document.body.style.backgroundColor = "#FFD76B";
     gridContainer.style.display = "none";
     // character name
