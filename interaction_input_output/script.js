@@ -606,6 +606,7 @@ document.addEventListener("keydown", function(event){
     // character
     characterInner.style.backgroundColor = "white";
     characterInner.style.borderColor = "black";
+    character.style.width = "150px";
     character.style.setProperty('--translate', 0);
     character.style.setProperty('--scale', 1);
     character.style.setProperty('--rotate', 0);

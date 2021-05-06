@@ -56,6 +56,7 @@ body {
   border-radius: 50%;
   margin: auto;
   position: absolute;
+  text-align: center;
   /* create animation keyframe */
   animation-name: character;
   animation-duration: 1.3s;
@@ -375,6 +376,7 @@ body {
 /* [g] grid */
 #grid-container {
   float: left;
+  display: none;
 }
 .co-one {
   position: fixed;
