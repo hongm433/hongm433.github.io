@@ -184,13 +184,11 @@ document.addEventListener("keydown", function(event){
   if (event.key == "a"){
     if (aPressed) {
       // runs on the second time f is pressed
-    animationA.classList.remove('animationA');
     character.style.marginLeft = "0px";
     result.innerText = "[a]: alignment-center";
     aPressed = false;
     } else {
       // runs on the first time f is pressed
-    animationA.classList.add('animationA');
     character.style.marginLeft = "-400px";
     result.innerText = "[a]: alignment-left";
     aPressed = true;
