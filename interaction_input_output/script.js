@@ -1,6 +1,7 @@
 // define variables
 let aPressed = false;
 let cPressed = false;
+let dPressed = false;
 let ePressed = false;
 let fPressed = false;
 let gPressed = false;
@@ -218,18 +219,18 @@ document.addEventListener("keydown", function(event){
 
   // d = drop shadow
   if (event.key == "d"){
-    if (ePressed) {
+    if (dPressed) {
       // runs on the second time
     characterInner.style["boxShadow"] = "none";
     result.innerText = "[d]: drop shadow OFF";
-    ePressed = false;
+    dPressed = false;
     document.querySelector(".d").classList.add("available");
     document.querySelector(".d").classList.remove("selected");
     } else {
       // runs on the first time
     characterInner.style["boxShadow"] = "18px 11px 15px #121212";
     result.innerText = "[d]: drop shadow ON";
-    ePressed = true;
+    dPressed = true;
     document.querySelector(".d").classList.remove("available");
     document.querySelector(".d").classList.add("selected");
     }
