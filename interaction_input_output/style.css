@@ -20,10 +20,9 @@ body {
   margin-bottom: 20px;
 }
 
-
 #result {
   font-size: 18px;
-  width: 52%;
+  width: 40%;
   height: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -36,7 +35,7 @@ body {
   width: 100%;
   height: 2px;
   position: fixed;
-  top: 85%;
+  top: 80%;
   background-color: black;
   margin-left: -8px;
   padding: 0;
@@ -68,7 +67,7 @@ body {
   }
   to {
     height: 150px;
-    top: 70%;
+    top: 65%;
     left: 45%;
   }
 }
@@ -133,41 +132,61 @@ body {
 .keyboard-pad {
   margin-left: auto;
   margin-right: auto;
-  width: 52%;
-  height: 200px;
+  width: 40%;
+  height: 150px;
   background-color: rgb(255, 255, 255, 0.5);
   padding-top: 14px;
 }
 
 .mainbutton {
   font-size: 15px;
+  line-height: 7px;
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  border-radius: 10%;
+}
+.fn {
+  font-size: 15px;
+  display: inline-block;
+  line-height: 7px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
 }
 .rowTwo, .rowThree, .rowFour{
   margin-top: 6px;
 }
 .rowFive {
-  margin-top: 8px;
+  margin-top: 5.5px;
   margin-right: 2px;  
 }
 #arrows {
   display: inline-block;
+  height: 22px;
 }
 .tab {
   font-size: 15px;
   padding-left: 5px;
   display: inline-block;
-  width: 58px;
-  height: 30px;
+  line-height: 7px;
+  width: 56px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: left;
 }
@@ -175,11 +194,12 @@ body {
   font-size: 15px;
   padding-right: 3px;
   display: inline-block;
+  line-height: 7px;
   width: 60px;
-  height: 30px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: right;
 }
@@ -187,12 +207,13 @@ body {
 .capslock {
   font-size: 15px;
   padding-left: 3px;
+  line-height: 7px;
   display: inline-block;
-  width: 73px;
-  height: 30px;
+  width: 60px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: left;
 }
@@ -200,12 +221,13 @@ body {
 .enter {
   font-size: 15px;
   padding-right: 3px;
+  line-height: 7px;
   display: inline-block;
-  width: 60px;
-  height: 30px;
+  width: 50px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: right;
 }
@@ -213,11 +235,12 @@ body {
   font-size: 15px;
   padding-left: 3px;
   display: inline-block;
-  width: 89px;
-  height: 30px;
+  line-height: 7px;
+  width: 71px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: left;
 }
@@ -225,80 +248,115 @@ body {
   font-size: 15px;
   padding-right: 3px;
   display: inline-block;
-  width: 89px;
-  height: 30px;
+  line-height: 7px;
+  width: 71px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: right;
 }
 .ctrl {
   font-size: 15px;
+  line-height: 7px;
   padding-left: 3px;
   display: inline-block;
   width: 33px;
-  height: 30px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: left;
 }
+.optionL {
+  display: inline-block;
+  line-height: 7px;
+  width: 28px;
+  height: 20px;
+  border: 1px solid black;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  border-radius: 10%;
+  padding-left: 2.5px;
+  text-align: left;
+}
+.optionR{
+  display: inline-block;
+  line-height: 7px;
+  width: 28px;
+  height: 20px;
+  border: 1px solid black;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
+  padding-right: 2.5px;
+  border-radius: 10%;
+  text-align: right;
+}
 .commandL {
   font-size: 15px;
-  padding-left: 3px;
+  padding-left: 4px;
+  line-height: 7px;
   display: inline-block;
-  width: 57px;
-  height: 30px;
+  width: 28px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: left;
 }
 .commandR {
   font-size: 15px;
-  padding-right: 3px;
+  padding-right: 4px;
+  line-height: 7px;
   display: inline-block;
-  width: 57px;
-  height: 30px;
+  width: 28px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 10%;
   text-align: right;
 }
 .spacebar {
   font-size: 15px;
+  line-height: 7px;
   display: inline-block;
-  width: 193px;
-  height: 30px;
+  width: 143px;
+  height: 20px;
   border: 1px solid black;
-  margin-left: 2.5px;
-  margin-right: 2.5px;
+  margin-left: 1.5px;
+  margin-right: 1.5px;
   border-radius: 5%;
 }
 #arrowUD {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
 }
 .arrowU{
-  font-size: 10px;
+  font-size: 5px;
   display: block;
-  width: 30px;
-  height: 15px;
+  font-weight: bold;
+  line-height: 4px;
+  width: 20px;
+  height: 9px;
   border: 1px solid black;
   border-radius: 10%;
   margin: 0;
   padding: 0;
 }
 .arrowD {
-  font-size: 10px;
+  font-size: 5px;
+  line-height: 3px;
+  font-weight: bold;
   display: block;
-  width: 30px;
-  height: 15px;
+  width: 20px;
+  height: 9px;
   border: 1px solid black;
   border-radius: 10%;
   margin: 0;
@@ -306,9 +364,10 @@ body {
 }
 .arrowL, .arrowR {
   font-size: 13px;
+  line-height: 8px;
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 1px solid black;
   border-radius: 10%;
 }
@@ -319,7 +378,7 @@ body {
 
 /* directions */
 .directions {
-  width: 52%;
+  width: 40%;
   height: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -333,14 +392,14 @@ body {
 }
 
 .direction {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   display: inline-block;
   border: 1px solid black;
 }
 .direction-ex {
   display: inline-block;
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 0;
   margin-bottom: 0;
 }

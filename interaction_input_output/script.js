@@ -94,6 +94,7 @@ document.addEventListener("keydown", function(event){
     result.innerText = "[1]: opacity 10%";
     document.querySelector(".one").classList.remove("available");
     document.querySelector(".one").classList.add("selected");
+    
   }  
   //      (2 = opacity 20%)
   if (event.key == "2"){
@@ -187,6 +188,8 @@ document.addEventListener("keydown", function(event){
     character.style.marginLeft = "0px";
     result.innerText = "[a]: alignment-center";
     aPressed = false;
+    document.querySelector(".a").classList.add("available");
+    document.querySelector(".a").classList.remove("selected");
     } else {
       // runs on the first time f is pressed
     character.style.marginLeft = "-400px";
@@ -213,13 +216,15 @@ document.addEventListener("keydown", function(event){
     document.querySelector(".c").classList.add("selected");
     }
 
-  // d = drop shapdw
+  // d = drop shadow
   if (event.key == "d"){
     if (ePressed) {
       // runs on the second time
     characterInner.style["boxShadow"] = "none";
     result.innerText = "[d]: drop shadow OFF";
     ePressed = false;
+    document.querySelector(".d").classList.add("available");
+    document.querySelector(".d").classList.remove("selected");
     } else {
       // runs on the first time
     characterInner.style["boxShadow"] = "18px 11px 15px #121212";
@@ -239,6 +244,8 @@ document.addEventListener("keydown", function(event){
     handRight.style.right = "-33px";
     result.innerText = "[e]: edge change OFF";
     ePressed = false;
+    document.querySelector(".e").classList.add("available");
+    document.querySelector(".e").classList.remove("selected");
     } else {
       // runs on the first time
     characterInner.style.borderRadius = "0%";
@@ -257,6 +264,8 @@ document.addEventListener("keydown", function(event){
       characterName.style.fontFamily = "fixedsys";
       result.innerText = "[f]: font change OFF";
       fPressed = false;
+      document.querySelector(".f").classList.add("available");
+      document.querySelector(".f").classList.remove("selected");
     } else {
       // runs on the first time f is pressed
       characterName.style.fontFamily = "futura";
@@ -272,6 +281,8 @@ document.addEventListener("keydown", function(event){
       gridContainer.style.display = "none";
       result.innerText = "[g]: grid OFF";
       gPressed = false;
+      document.querySelector(".g").classList.add("available");
+      document.querySelector(".g").classList.remove("selected");
     } else {
       // runs on the first time
     gridContainer.style.display = "block";
@@ -288,6 +299,8 @@ document.addEventListener("keydown", function(event){
       handRight.style.display = "none";
       result.innerText = "[h]: hands generator OFF";
       hPressed = false;
+      document.querySelector(".h").classList.add("available");
+      document.querySelector(".h").classList.remove("selected");
     } else {
       // runs on the first time
       handLeft.style.display = "inline-flex";
@@ -304,6 +317,8 @@ document.addEventListener("keydown", function(event){
       characterInner.style["boxShadow"] = "none";
       result.innerText = "[i]: inner glow OFF";
       iPressed = false;
+      document.querySelector(".i").classList.add("available");
+    document.querySelector(".i").classList.remove("selected");
     } else {
     characterInner.style["boxShadow"] = "inset 0 0 30px #FFD76B";
     result.innerText = "[i]: inner glow ON";
@@ -318,6 +333,8 @@ document.addEventListener("keydown", function(event){
       jennieG.style.display = "none";
       result.innerText = "[j]: Jennie disappeared";
       jPressed = false;
+      document.querySelector(".j").classList.add("available");
+      document.querySelector(".j").classList.remove("selected");
     } else {
       // runs on the first time
       jennieG.style.display = "inline";
@@ -357,6 +374,8 @@ document.addEventListener("keydown", function(event){
     animationA.classList.remove('animationA');
     result.innerText = "[a]: keyframe infinite loop OFF";
     kPressed = false;
+    document.querySelector(".k").classList.add("available");
+    document.querySelector(".k").classList.remove("selected");
     } else {
       // runs on the first time f is pressed
     animationA.classList.add('animationA');
@@ -381,6 +400,8 @@ document.addEventListener("keydown", function(event){
       bgm.pause();
       mPressed = false;
       result.innerText = "[m]: music OFF";
+      document.querySelector(".m").classList.add("available");
+      document.querySelector(".m").classList.remove("selected");
     } else {
       // runs on the first time
       bgm.play();
@@ -403,6 +424,8 @@ document.addEventListener("keydown", function(event){
       keyboardPad.style.outline = "none";
       result.innerText = "[o]: outline OFF";
       oPressed = false;
+      document.querySelector(".o").classList.add("available");
+    document.querySelector(".o").classList.remove("selected");
     } else {
     keyboardPad.style.outline = "dashed red";
     result.innerText = "[o]: outline ON";
@@ -416,6 +439,8 @@ document.addEventListener("keydown", function(event){
       pet.style.display = "none";
       result.innerText = "[p]: pet generator OFF";
       pPressed = false;
+      document.querySelector(".p").classList.add("available");
+      document.querySelector(".p").classList.remove("selected");
     } else {
       // runs on the first time
       pet.style.display = "inline-flex";
@@ -426,7 +451,7 @@ document.addEventListener("keydown", function(event){
     }
   }      
   //      (r = rotate the character )
-  if (event.key === 'r') {
+  if (event.key == 'r') {
     const rotate = Number(character.style.getPropertyValue('--rotate'));
     character.style.setProperty('--rotate', rotate + 45);
     result.innerText = "[r]: rotate the character";
@@ -452,6 +477,8 @@ document.addEventListener("keydown", function(event){
       handRight.style.right = "-33px";
       result.innerText = "[t]: thickness-original";
       tPressed = false;
+      document.querySelector(".t").classList.add("available");
+    document.querySelector(".t").classList.remove("selected");
     } else {
       // runs on the first time
       characterInner.style.borderWidth = "6px";
@@ -460,9 +487,9 @@ document.addEventListener("keydown", function(event){
       handRight.style.right = "-37px";
       result.innerText = "[t]: thickness-bold";
       tPressed = true;
-    }  
-    document.querySelector(".t").classList.remove("available");
+      document.querySelector(".t").classList.remove("available");
     document.querySelector(".t").classList.add("selected");
+    }  
   } 
   //     (w = width change)
   if (event.key == "w"){
@@ -470,6 +497,8 @@ document.addEventListener("keydown", function(event){
       character.style.width = "150px";
       result.innerText = "[w]: width change OFF";
       wPressed = false;
+      document.querySelector(".w").classList.add("available");
+      document.querySelector(".w").classList.remove("selected");
     } else {
       // runs on the first time
       character.style.width = "250px";
@@ -487,6 +516,8 @@ document.addEventListener("keydown", function(event){
       line.style.zIndex = "99"
       result.innerText = "[z]: z-index forward";
       zPressed = false;
+      document.querySelector(".z").classList.add("available");
+      document.querySelector(".z").classList.remove("selected");
     } else {
       // runs on the first time
       character.style.zIndex = "98"
@@ -639,7 +670,223 @@ document.addEventListener("keyup", function(event){
   if (event.code === 'CapsLock'){
     document.querySelector(".capslock").style.backgroundColor = "rgb(0, 0, 0, 0.6)";
   } 
+
 });
 
 
+document.addEventListener("keydown", function(event){
+  //      (` = opacity 0%)
+  if (event.key != "`"){
+  document.querySelector(".beforeOne").classList.add("available");
+  document.querySelector(".beforeOne").classList.remove("selected");
+  }    
+  //      (1 = opacity 20%)
+  if (event.key != "1"){
+    document.querySelector(".one").classList.add("available");
+    document.querySelector(".one").classList.remove("selected");
+  }  
+  //      (2 = opacity 20%)
+  if (event.key != "2"){
+    document.querySelector(".two").classList.add("available");
+    document.querySelector(".two").classList.remove("selected");
+  }  
+  //      (3 = opacity 30%)
+  if (event.key != "3"){
+    document.querySelector(".three").classList.add("available");
+    document.querySelector(".three").classList.remove("selected");
+  }  
+  //      (4 = opacity 40%)
+  if (event.key != "4"){
+    document.querySelector(".four").classList.add("available");
+    document.querySelector(".four").classList.remove("selected");
+  }  
+  //      (5 = opacity 50%)
+  if (event.key != "5"){
+    document.querySelector(".five").classList.add("available");
+    document.querySelector(".five").classList.remove("selected");
+  }      
+  //      (6 = opacity 60%)
+  if (event.key != "6"){
+    document.querySelector(".six").classList.add("available");
+    document.querySelector(".six").classList.remove("selected");
+  }  
+  //      (7 = opacity 70%)
+  if (event.key != "7"){
+    document.querySelector(".seven").classList.add("available");
+    document.querySelector(".seven").classList.remove("selected");
+  }  
+  //      (8 = opacity 80%)
+  if (event.key != "8"){
+    document.querySelector(".eight").classList.add("available");
+    document.querySelector(".eight").classList.remove("selected");
+  }  
+  //      (9 = opacity 90%)
+  if (event.key != "9"){
+    document.querySelector(".nine").classList.add("available");
+    document.querySelector(".nine").classList.remove("selected");
+  }  
+  //      (0 = opacity 100%)
+  if (event.key != "0"){
+    document.querySelector(".zero").classList.add("available");
+    document.querySelector(".zero").classList.remove("selected");
+  }   
+  /* alphabet */
 
+  //     (a = animation infinite loop)
+  if (event.key != "a"){
+    document.querySelector(".a").classList.add("available");
+    document.querySelector(".a").classList.remove("selected");
+    }
+  //     (b = background change)
+  if (event.key != "b"){
+    document.querySelector(".b").classList.add("available");
+    document.querySelector(".b").classList.remove("selected");
+  }
+  //      (c = color change)
+  if (event.key != "c"){
+    document.querySelector(".c").classList.add("available");
+    document.querySelector(".c").classList.remove("selected");
+    }
+  // d = drop shadow
+  if (event.key != "d"){
+    document.querySelector(".d").classList.add("available");
+    document.querySelector(".d").classList.remove("selected");
+    } 
+  //     (e = edge change)
+  if (event.key != "e"){
+    document.querySelector(".e").classList.add("available");
+    document.querySelector(".e").classList.remove("selected");
+    }
+  
+  //     (f = font change)
+  if (event.key != "f"){
+      document.querySelector(".f").classList.add("available");
+      document.querySelector(".f").classList.remove("selected");
+  };  
+  //     (g = grid)
+  if (event.key != "g"){
+    document.querySelector(".g").classList.add("available");
+      document.querySelector(".g").classList.remove("selected");
+    }
+  //     (h = hand generator)
+  if (event.key != "h"){
+      document.querySelector(".h").classList.add("available");
+      document.querySelector(".h").classList.remove("selected");
+    } 
+  //     (i = inner glow)
+  if (event.key != "i"){
+    document.querySelector(".i").classList.add("available");
+    document.querySelector(".i").classList.remove("selected");
+    }  
+  //     (j = Jennie)
+  if (event.key != "j"){
+      document.querySelector(".j").classList.add("available");
+      document.querySelector(".j").classList.remove("selected");
+  };
+  //     (k = keyframe)
+  if (event.key != "k"){
+    document.querySelector(".k").classList.add("available");
+    document.querySelector(".k").classList.remove("selected");
+    }      
+  //      (l = line color change)
+  if (event.key != "l"){
+    document.querySelector(".l").classList.add("available");
+    document.querySelector(".l").classList.remove("selected");
+  }
+  //     (m = music on/off)
+  if (event.key != "m"){
+      document.querySelector(".m").classList.add("available");
+      document.querySelector(".m").classList.remove("selected");
+    }
+  //      (n = name change)
+  if (event.key != "n"){
+    document.querySelector(".n").classList.add("available");
+    document.querySelector(".n").classList.remove("selected");
+  }
+  //     (o = outline )
+  if (event.key != "o"){
+    document.querySelector(".o").classList.add("available");
+    document.querySelector(".o").classList.remove("selected");
+  }  
+  //     (p = pet generator)
+  if (event.key != "p"){
+      document.querySelector(".p").classList.add("available");
+      document.querySelector(".p").classList.remove("selected");
+    }    
+  //      (r = rotate the character )
+  if (event.key != 'r') {
+    document.querySelector(".r").classList.add("available");
+    document.querySelector(".r").classList.remove("selected");
+  }  
+  //      (s = stroke color change)
+  if (event.key != "s"){
+    document.querySelector(".s").classList.add("available");
+    document.querySelector(".s").classList.remove("selected");
+  }
+  //     (t = thickness change)
+  if (event.key != "t"){
+    document.querySelector(".t").classList.add("available");
+    document.querySelector(".t").classList.remove("selected");
+  } 
+  //     (w = width change)
+  if (event.key != "w"){
+      document.querySelector(".w").classList.add("available");
+      document.querySelector(".w").classList.remove("selected");
+  }  
+  //     (z = z-index)
+  if (event.key != "z"){
+      document.querySelector(".z").classList.add("available");
+      document.querySelector(".z").classList.remove("selected");
+    }        
+ 
+  /* glyphs */
+
+  //      (- = scale down) 
+  if (event.key !== '-') {
+    document.querySelector(".dash").classList.add("available");
+    document.querySelector(".dash").classList.remove("selected");
+  }
+  //      (=/+ = scale up)
+  if (event.key !== '=') {
+    document.querySelector(".plus").classList.add("available");
+    document.querySelector(".plus").classList.remove("selected");
+  }
+  //      (left arrow = move left)
+  if (event.key !== 'ArrowLeft') {
+    document.querySelector(".arrowL").classList.add("available");
+    document.querySelector(".arrowL").classList.remove("selected");
+  }
+  //      (right arrow = move right)
+  if (event.key !== 'ArrowRight') {
+    document.querySelector(".arrowR").classList.add("available");
+    document.querySelector(".arrowR").classList.remove("selected");
+  }
+  //      (up arrow = move backward)
+  if (event.key !== 'ArrowUp') {
+    document.querySelector(".arrowU").classList.add("available");
+    document.querySelector(".arrowU").classList.remove("selected");
+  }  
+  //      (down arrow = move forward)
+  if (event.key !== 'ArrowDown') {
+    document.querySelector(".arrowD").classList.add("available");
+    document.querySelector(".arrowD").classList.remove("selected");
+  }  
+
+  //      (spacebar = jump)
+  if (event.code !== 'Space') {
+    document.querySelector(".spacebar").classList.add("available");
+    document.querySelector(".spacebar").classList.remove("selected");
+  }
+
+  //      (enter = reset position)
+  if (event.code !== 'Enter'){
+    document.querySelector(".enter").classList.add("available");
+    document.querySelector(".enter").classList.remove("selected");
+  }
+
+  //      (backspace = default)
+  if (event.key != "Backspace"){
+    document.querySelector(".backspace").classList.add("available");
+    document.querySelector(".backspace").classList.remove("selected");
+  }    
+})
